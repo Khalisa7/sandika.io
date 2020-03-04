@@ -1,39 +1,22 @@
 const path  = require('path');
-const HWP   = require('html-webpack-plugin');
+const htmlWebpack   = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const DWP   = require('dotenv-webpack');
+const dotEnv   = require('dotenv-webpack');
 const webpack = require("webpack");
-const TerserJSPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const AsyncChunkNames = require('webpack-async-chunk-names-plugin');
+const cssExtract = require('mini-css-extract-plugin');
 
-require("@babel/polyfill");
+
 
 module.exports = {
-
-    // Entry Point
     entry   : [
-        "@babel/polyfill",
-        "core-js/modules/es.promise",
-        "core-js/modules/es.array.iterator",
         path.join(__dirname, '/index.js')
     ],
-
-    // Output Point
     output  : {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
     },
-
     optimization: {
-        minimizer: [
-            new TerserJSPlugin({
-                cache: true,
-                parallel: true,
-            }),
-        ],
         splitChunks: {
             cacheGroups: {
                 commons: {
@@ -44,8 +27,6 @@ module.exports = {
             }
         }
     },
-
-    // Module Point
     module  : {
         // Module Rules Point
         rules       : [{
@@ -76,7 +57,7 @@ module.exports = {
         },{
             test: /\.(sa|sc|c)ss$/,
             use: [
-                MiniCssExtractPlugin.loader,
+                cssExtract.loader,
                 { loader: "css-loader", options: { sourceMap: true, importLoaders: 1 } },
                 { loader: "sass-loader", options: { sourceMap: true } },
             ],
@@ -93,33 +74,27 @@ module.exports = {
             ]
         }]
     },
-
-    // Resolve Path Alias To Use On Import
     resolve: {
         alias: {
             '@src'       : path.resolve(__dirname, 'src/'),
         }
     },
-
-    // Dev Server
     devServer: {
         historyApiFallback: true,
     },
-
-    // Plugins Point
     plugins  : [
-        new HWP ({ 
+        new htmlWebpack ({ 
                 template    : path.join(__dirname, '/src/template/index.html'),
                 filename    : './index.html',
                 favicon     : './src/template/favicon.png'
             }),
-        new DWP ({ path: './.env.development' }),
+        new dotEnv ({ path: './.env.development' }),
         new CleanWebpackPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
         }),
-        new MiniCssExtractPlugin({
+        new cssExtract({
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css',
         }),
