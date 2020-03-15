@@ -20,26 +20,28 @@ class App extends Component {
         return (
             <Fragment>
                 <BrowserRouter>
-                    <Navbar 
-                        logo={logo} 
-                        user_login={user} 
-                        link={navbar_link}
-                        toggleIcon = {<FontAwesomeIcon icon={faBars}/>}
-                        />
-                        
-                    <Content>
-                        <Suspense fallback={ <LoadingSpinner/> } > 
-                            <Switch>
-                                {
-                                    location.map( (route, i)=>{
-                                        return(
-                                            <Route exact={route.exact} path={route.path} key={i} component={route.render}/>
-                                        )
-                                    })
-                                }
-                            </Switch>
-                        </Suspense>
-                    </Content>
+                    <Suspense fallback={ <LoadingSpinner/> } > 
+                        <Navbar 
+                            logo={logo} 
+                            user_login={user} 
+                            link={navbar_link}
+                            toggleIcon = {<FontAwesomeIcon icon={faBars}/>}
+                            />
+                            
+                        <Content>
+                            
+                                <Switch>
+                                    {
+                                        location.map( (route, i)=>{
+                                            return(
+                                                <Route exact={route.exact} path={route.path} key={i} component={route.render}/>
+                                            )
+                                        })
+                                    }
+                                </Switch>
+                            
+                        </Content>
+                    </Suspense>
                 </BrowserRouter>
             </Fragment>
         )

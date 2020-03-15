@@ -1,4 +1,4 @@
-import React, {Component, Fragment, useState} from 'react'
+import React, {Component, Fragment, useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Megamenu from '@src/component/megamenu'
@@ -24,6 +24,10 @@ const Navbar = (props) => {
     const [searchFormState, setSearchFormState] = useState(false)
     const [searchKey, setSearchKey] = useState('')
 
+    useEffect(() => {
+        searchFormState ? document.body.classList.add('search-open') : document.body.classList.remove('search-open');
+    });
+
     const handleSearchFormFocus = () => {
         setSearchFormState(!searchFormState)
     }
@@ -46,12 +50,12 @@ const Navbar = (props) => {
                         <div className={searchFormState?"search-container active":"search-container"}>
                             <div className="d-flex my-2 my-lg-0">
                                 <div className="search-category mr-2 d-none d-md-inline-block">
-                                    <Megamenu ex={"hai"} searchKey={searchKey}/>
+                                    <Megamenu/>
                                 </div>
                                 <div className="search-form">
                                     <SearchForm 
                                         onFocus={handleSearchFormFocus}
-                                        onBlur={handleSearchFormFocus} 
+                                        onBlur={handleSearchFormFocus}
                                         onChange={handleSearchKey}
                                         />
                                     <SearchResult 

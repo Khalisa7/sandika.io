@@ -22,7 +22,7 @@ const Homepage = () => {
         <Fragment>
             <div style={{}} className="page page-home">
                 <div className="main-slider">
-                    <div className="container banner-wrapper">
+                    <div className="banner-wrapper">
                         <OwlSlider/>
                     </div>
                 </div>

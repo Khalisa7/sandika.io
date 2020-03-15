@@ -8,9 +8,7 @@ const mapStateToProps = state => {
 
 const Render = (props) => {
     const { megamenuContent } = props
-    const wrapperRef = useRef(null);
     const [ active, setActive ] = useState(false)
-    console.log(props)
     return(
         <Fragment>
             <div className={active?"dropdown megamenu active":"dropdown megamenu"}>
