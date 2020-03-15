@@ -1,0 +1,67 @@
+
+
+
+@font-face {
+    font-family: 'OS Regular';
+    src:    url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OS Light';
+    src:    url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OS Bold';
+    src:    url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OS SemiBold';
+    src:    url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+
+
+
+// STYLING START HERE
+html, body { height: 100%; }
+
+p, a, button, .btn{
+    font-family: 'OS Regular',tahoma,sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+a{
+    color: $color-text;
+    text-decoration: none;
+    &:hover{
+        color: $color-text;
+        transition: 1s ease;
+        opacity: 12px;
+    }
+}
+
+.form-control{
+    font-size: .8em;
+    color: $color-text;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+[class^="btn"]:not(:disabled):not(.disabled):active:focus,
+.btn:focus, .btn.focus,
+.dropdown-toggle:focus{
+    box-shadow: none;
+}
+
+#main{
+    display: block;   
+}
+
+@media (min-width : 480px){
+    .page{
+        padding-top: 55px;
+    }
+}

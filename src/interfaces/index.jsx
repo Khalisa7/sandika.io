@@ -7,31 +7,28 @@ const interfaces = {
     logo :{
         _src : 'https://sleekr.co/wp-content/themes/sleekr_08/images/icon/icon-sleekr.svg',
         _alt : 'Sandika Partner',
-        _label : 'Sunar Admin'
+        _label : 'Sandika'
     },
     user : false,
     navbar_link : [
         {
             _type: 'link',
-            _label : 'Home',
-            _routes : '/',
+            _label : 'Login',
+            _routes : '/login',
+            _style : 'd-none d-md-block nav-link customer-login'
         },
         {
             _type: 'link',
-            _label : 'Notification',
-            _routes : '/notification',
+            _label : 'Register',
+            _routes : '/register',
+            _style : 'd-none d-md-block nav-link customer-register'
         },
         {
-            _type: 'dropdown',
-            _label : 'User Profile',
-            _item: [
-                {
-                    _type: 'link',
-                    _label : 'Logout',
-                    _routes : '/logout',
-                }
-            ]
-        }
+            _type: 'link',
+            _label : 'Cart',
+            _routes : '/cart',
+            _style : 'nav-link quickcart'
+        },
     ]
 }
 

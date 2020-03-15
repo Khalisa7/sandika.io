@@ -1,52 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
-
+$common : true;
 $color-logo : rgb(33, 151, 49);
-$color-text : #495057;
+$color-text : #444444;
+$color-border: #f3f3f3;
+$bg-primary : rgb(33, 151, 49);
 
-p, a{
-    font-family: 'Open Sans',tahoma,sans-serif;
-    line-height: 1.5;
-    font-size: 1rem;
-}
-a{
-    color: $color-text;
-    text-decoration: none;
-    &:hover{
-        color: $color-text;
-        transition: 1s ease;
-        opacity: 0.8;
-    }
-}
+@import 'core';
+@import 'header';
+@import 'megamenu';
+@import 'slider';
+@import 'page_home';
 
-.container-custom{
-    min-width: 960px;
-    max-width: 1000px;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    // background-color: blue;
-    margin: auto;
-}
-
-#main{
-    display: block;
-    .navbar{
-        background-color: white;
-        // padding: 10px 0;
-        border-bottom: 1px solid rgb(232, 255, 232);
-        .navbar-brand{
-            color: $color-logo;
-            font-weight: 600;
-        }
-
-        .dropdown-item, .nav-link{
-            font-weight: 600;
-            font-size: .8rem;
-            color: $color-text;
-        }
-    }
-}

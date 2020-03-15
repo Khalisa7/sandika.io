@@ -40,7 +40,18 @@ module.exports = {
                     loader: "babel-loader"
                 }
             ]
-        },{
+        },
+        {
+            test: require.resolve('jquery'),
+            use: [{
+                loader: 'expose-loader',
+                options: 'jQuery'
+            },{
+                loader: 'expose-loader',
+                options: '$'
+            }]
+        },
+        {
             test: /\.html$/,
             use: [
                 {
@@ -61,8 +72,19 @@ module.exports = {
             test: /\.(sa|sc|c)ss$/,
             use: [
                 cssExtract.loader,
-                { loader: "css-loader", options: { sourceMap: true, importLoaders: 1 } },
-                { loader: "sass-loader", options: { sourceMap: true } },
+                { 
+                    loader: "css-loader", 
+                    options: { 
+                        sourceMap: true, 
+                        importLoaders: 2
+                    }
+                },
+                { 
+                    loader: "sass-loader", 
+                    options: { 
+                        sourceMap: true 
+                    } 
+                },
             ],
         },{
             test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -93,10 +115,6 @@ module.exports = {
             }),
         new dotEnv ({ path: './.env.development' }),
         new CleanWebpackPlugin(),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        }),
         new cssExtract({
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css',

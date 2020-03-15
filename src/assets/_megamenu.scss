@@ -1,0 +1,56 @@
+.megamenu{
+    button{
+        background: none;
+    }
+    &.active{
+        button{
+            border-radius: 10px;
+            background: $color-border;
+        }
+    }
+    
+    .megamenu-wrapper{
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        top: 56px;
+        margin-top: 0;
+        transition: .5s ease-in;
+        min-height: 400px;
+        max-height: 420px;
+        border-top: 1px solid #dee2e6 ;
+    }
+    .megamenu-content{
+        padding: 0;
+        position: relative;
+        .megamenu-tabs .nav-tabs .nav-link{
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: unset;
+            font-size: 12px;
+            font-family: 'OS SemiBold';
+            color: $color-text;
+            padding: 1rem;
+        }
+        .megamenu-tabs .nav-tabs .nav-link.active{
+            border-bottom: 2px solid $color-logo;
+            color: $color-logo;
+        }
+    }
+    .megamenu-overlay{
+        transition: opacity 0.5s;
+    }
+    .megamenu-overlay.show{
+        position: fixed;
+        // top: 85px;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.3);
+        z-index: 2;
+    }
+}
