@@ -1,43 +1,43 @@
-import React, {Fragment, useState} from 'react'
-import SearchIcon from '@material-ui/icons/Search'
-import SvgIcon from '@material-ui/core/SvgIcon'
+import React, { Fragment, useState } from 'react';
+import PropTypes from 'prop-types';
+import SearchIcon from '@material-ui/icons/Search';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 const SearchForm = (props) => {
+    var typingTimer;
+    var doneTypingInterval = 2000;
 
-    var typingTimer
-    var doneTypingInterval = 3000
-
-    const {onFocus, onBlur, onChange} = props
-    const [searchKey, setSearchKey] = useState('')
+    const { onFocus, onBlur, onChange } = props;
+    const [searchKey, setSearchKey] = useState('');
 
     const keyUp = (e) => {
-        clearInterval(typingTimer)
+        clearInterval(typingTimer);
         typingTimer = setTimeout(
-            ()=>{onChange(searchKey)}, 
+            () => {onChange(searchKey);},
             doneTypingInterval
-        )
-    }
+        );
+    };
 
     const keyDown = () => {
-        clearInterval(typingTimer)
-    }
+        clearInterval(typingTimer);
+    };
 
 
-    return(
+    return (
         <Fragment>
             <form autoComplete={"off"}>
                 <div className="input-group">
-                    <input className="form-control" 
-                        ype="search" 
-                        placeholder="Temukan barang yang kamu butuhkan disini" 
+                    <input className="form-control"
+                        ype="search"
+                        placeholder="Temukan barang yang kamu butuhkan disini"
                         name="searchInput"
-                        onClick={onFocus} 
-                        // onBlur={onBlur} 
+                        onFocus={onFocus}
+                        onBlur={onBlur}
                         onKeyUp={keyUp}
                         onKeyDown={keyDown}
                         value={searchKey}
-                        onChange={(e)=>{setSearchKey(e.target.value)}}
-                        />
+                        onChange={(e) => {setSearchKey(e.target.value);}}
+                    />
                     <div className="input-group-append">
                         <span className="input-group-text" id="basic-addon1">
                             <SearchIcon fontSize={'small'}>
@@ -47,11 +47,17 @@ const SearchForm = (props) => {
                             </SearchIcon>
                         </span>
                     </div>
-                    <button type="submit" className="d-none"></button>
+                    <button type="submit" className="d-none" />
                 </div>
             </form>
         </Fragment>
-    )
-}
+    );
+};
 
-export default SearchForm
+SearchForm.propTypes = {
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func
+};
+
+export default SearchForm;

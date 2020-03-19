@@ -1,0 +1,24 @@
+{
+    "parser": "babel-eslint",
+    "extends": "react",
+    "rules": {
+        "max-len": 0
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "jquery": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true,
+            "classes": true
+        }
+    }
+}

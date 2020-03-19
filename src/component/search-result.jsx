@@ -1,38 +1,37 @@
-import React, {Fragment, useEffect, useRef} from 'react'
-
+import React, { Fragment, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 const SearchResult = (props) => {
-    const searchRow = []
-    const {products, searchKey} = props
+    const searchRow = [];
+    const { products, searchKey } = props;
     const usePrevious = (value) => {
         const ref = useRef();
         useEffect(() => {
             ref.current = value;
         });
         return ref.current;
-    }
+    };
 
-    const previousSearchKey = usePrevious(searchKey)
-    
+    const previousSearchKey = usePrevious(searchKey);
+
     // Sorting Product
     products.sort((a, b) => {
         let comparison = 0;
-        if(a.category.toLowerCase() > b.category.toLowerCase()){
-            comparison = 1
+        if (a.category.toLowerCase() > b.category.toLowerCase()) {
+            comparison = 1;
         }
-        if(a.category.toLowerCase() < b.category.toLowerCase()){
-            comparison = -1
+        if (a.category.toLowerCase() < b.category.toLowerCase()) {
+            comparison = -1;
         }
-        return comparison
-    })
+        return comparison;
+    });
 
     // Push To ROW
-    if(searchKey.length !== 0 && searchKey!==previousSearchKey){
-        var lastCategory = null
-        console.log(searchKey)
-        products.map((res, i)=>{
-            if(res.name.indexOf(searchKey) === -1){
-                return -1
+    if (searchKey.length !== 0 && searchKey !== previousSearchKey) {
+        console.log(searchKey);
+        products.map((res, i) => {
+            if (res.name.indexOf(searchKey) === -1) {
+                return -1;
             }
             searchRow.push(
                 <div className="media" key={i}>
@@ -44,11 +43,23 @@ const SearchResult = (props) => {
                     </div>
                 </div>
             );
-            lastCategory = res.category
-        })
+        });
+    } else if (searchKey === "") {
+        products.map((res, i) => {
+            searchRow.push(
+                <div className="media" key={i}>
+                    <div className="img-thumbs">
+                        <img src={res.img} srcSet=""/>
+                    </div>
+                    <div className="media-body align-self-center">
+                        <p>{res.name}</p>
+                    </div>
+                </div>
+            );
+        });
     }
 
-    return(
+    return (
         <Fragment>
             <div className="search-result">
                 <div className="product-search">
@@ -62,7 +73,17 @@ const SearchResult = (props) => {
                 </div>
             </div>
         </Fragment>
-    )
-}
+    );
+};
 
-export default SearchResult
+SearchResult.defaultProps = {
+    products: [],
+    searchKey: ''
+};
+
+SearchResult.propTypes = {
+    products: PropTypes.array,
+    searchKey: PropTypes.string
+};
+
+export default SearchResult;

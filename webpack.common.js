@@ -36,9 +36,8 @@ module.exports = {
                 extensions: [".jsx", ".js", ".json"] 
             },
             use: [
-                {
-                    loader: "babel-loader"
-                }
+                { loader: "babel-loader" },
+                { loader: "eslint-loader" }
             ]
         },
         {
@@ -108,6 +107,11 @@ module.exports = {
         historyApiFallback: true,
     },
     plugins  : [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery" : "jquery"
+        }),
         new htmlWebpack ({ 
                 template    : path.join(__dirname, '/src/template/index.html'),
                 filename    : './index.html',

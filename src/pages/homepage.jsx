@@ -1,24 +1,8 @@
-import React, { Fragment, useState } from 'react'
-import OwlSlider from '@src/component/owl-carousel'
-
+import React, { Fragment } from 'react';
+import OwlSlider from '@src/component/owl-carousel';
 
 const Homepage = () => {
-    var temp = {}
-
-    const [state, setState] = useState({})
-
-    function handleSubmit(e){
-        e.preventDefault()
-        setState(temp)
-        console.log(state)
-    }
-
-    function handleValue(e, key){
-        temp[key] = e.target.value
-        console.log(temp)
-    }
-
-    return(
+    return (
         <Fragment>
             <div style={{}} className="page page-home">
                 <div className="main-slider">
@@ -28,7 +12,7 @@ const Homepage = () => {
                 </div>
             </div>
         </Fragment>
-    )
-}
+    );
+};
 
-export default Homepage 
+export default Homepage;
