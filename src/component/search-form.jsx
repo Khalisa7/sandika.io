@@ -54,6 +54,13 @@ const SearchForm = (props) => {
     );
 };
 
+
+SearchForm.defaultProps = {
+    onFocus: null,
+    onBlur: null,
+    onChange: null
+};
+
 SearchForm.propTypes = {
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,

@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
 const Content = (props) => {
     const { children } = props;
@@ -12,6 +12,9 @@ const Content = (props) => {
     );
 };
 
+Content.defaultProps = {
+    children: null
+};
 
 Content.propTypes = {
     children: PropTypes.oneOfType([
