@@ -31,7 +31,7 @@ const SearchForm = (props) => {
                         ype="search"
                         placeholder="Temukan barang yang kamu butuhkan disini"
                         name="searchInput"
-                        onFocus={onFocus}
+                        onClick={onFocus}
                         onBlur={onBlur}
                         onKeyUp={keyUp}
                         onKeyDown={keyDown}

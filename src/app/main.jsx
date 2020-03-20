@@ -1,12 +1,13 @@
-import React, { Component, Fragment, Suspense } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import LoadingSpinner from '@src/component/loading-spinner';
-import location from '@src/routes';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import interfaces from '@src/interfaces';
-import Navbar from '@src/component/navbar';
-import Content from '@src/component/content';
+import React, { Component, Fragment, Suspense } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import LoadingSpinner from "@src/component/loading-spinner";
+import location from "@src/routes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import interfaces from "@src/interfaces";
+import Navbar from "@src/component/navbar";
+import Content from "@src/component/content";
+import Brands from "@src/component/brands";
 
 class App extends Component {
     constructor (props) {
@@ -29,7 +30,6 @@ class App extends Component {
                         />
 
                         <Content>
-
                             <Switch>
                                 {
                                     location.map((route, i) => {
@@ -43,6 +43,7 @@ class App extends Component {
                         </Content>
                     </Suspense>
                 </BrowserRouter>
+                <Brands/>
             </Fragment>
         );
     }
