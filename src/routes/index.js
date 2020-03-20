@@ -1,18 +1,26 @@
 import React, { lazy } from "react";
 const Homepage = lazy(() => import("@src/pages/homepage"));
 
-const location = [
+const routes = [
     {
         path: "/",
-        exact: true,
-        render: () => {return (<Homepage/>);}
+        component: () => {return (<Homepage/>);},
+        routes: [
+            {
+                path: "/product",
+                component: () => {return (<Homepage/>);}
+            },
+            {
+                path: "/detail",
+                component: () => {return (<Homepage/>);}
+            }
+        ]
     },
     {
         path: "/dashboard",
-        exact: true,
-        render: () => {return (<Homepage/>);}
+        component: () => {return (<Homepage/>);}
     }
 ];
 
 
-export default location;
+export default routes;

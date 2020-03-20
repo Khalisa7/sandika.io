@@ -1,7 +1,7 @@
 import React, { Component, Fragment, Suspense } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoadingSpinner from "@src/component/loading-spinner";
-import location from "@src/routes";
+import routes from "@src/routes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import interfaces from "@src/interfaces";
@@ -32,9 +32,16 @@ class App extends Component {
                         <Content>
                             <Switch>
                                 {
-                                    location.map((route, i) => {
+                                    routes.map((route, i) => {
                                         return (
-                                            <Route exact={route.exact} path={route.path} key={i} component={route.render}/>
+                                            <Route
+                                                key={i}
+                                                path={route.path}
+                                                render={props => (
+                                                    <route.component {...props} routes={route.routes} />
+                                                )}
+                                            />
+                                            // <Route exact={route.exact} path={route.path} key={i} component={route.render}/>
                                         );
                                     })
                                 }
