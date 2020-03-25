@@ -1,13 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
-const mapStateToProps = state => {
-    return { megamenuContent: state.megamenuContent };
-};
-
-
-const Render = (props) => {
+const Megamenu = (props) => {
     const { megamenuContent } = props;
     const [active, setActive] = useState(false);
     return (
@@ -52,9 +46,8 @@ const Render = (props) => {
 };
 
 
-Render.propTypes = {
+Megamenu.propTypes = {
     megamenuContent: PropTypes.array
 };
 
-const Megamenu = connect(mapStateToProps)(Render);
 export default Megamenu;

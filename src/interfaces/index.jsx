@@ -29,6 +29,44 @@ const interfaces = {
             _routes: '/cart',
             _style: 'nav-link quickcart'
         }
+    ],
+    bannerCarousel: [
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        }
     ]
 };
 

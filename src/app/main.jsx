@@ -1,6 +1,7 @@
 import React, { Component, Fragment, Suspense } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoadingSpinner from "@src/component/loading-spinner";
+import PropTypes from 'prop-types';
 import routes from "@src/routes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -8,8 +9,14 @@ import interfaces from "@src/interfaces";
 import Navbar from "@src/component/navbar";
 import Content from "@src/component/content";
 import Brands from "@src/component/brands";
+import Footer from "@src/component/footer";
+import { connect } from 'react-redux';
 
-class App extends Component {
+const mapStateToProps = state => {
+    return { megamenuContent: state.megamenuContent };
+};
+
+class Render extends Component {
     constructor (props) {
         super(props);
         this.state = {};
@@ -17,7 +24,7 @@ class App extends Component {
 
     render () {
         const { logo, user, navbarLink } = interfaces;
-
+        const { megamenuContent } = this.props;
         return (
             <Fragment>
                 <BrowserRouter>
@@ -27,6 +34,7 @@ class App extends Component {
                             user_login={user}
                             link={navbarLink}
                             toggleIcon = {<FontAwesomeIcon icon={faBars}/>}
+                            megamenu = {megamenuContent}
                         />
 
                         <Content>
@@ -41,7 +49,6 @@ class App extends Component {
                                                     <route.component {...props} routes={route.routes} />
                                                 )}
                                             />
-                                            // <Route exact={route.exact} path={route.path} key={i} component={route.render}/>
                                         );
                                     })
                                 }
@@ -51,9 +58,16 @@ class App extends Component {
                     </Suspense>
                 </BrowserRouter>
                 <Brands/>
+                <Footer/>
             </Fragment>
         );
     }
 }
+
+Render.propTypes = {
+    megamenuContent: PropTypes.array
+};
+
+const App = connect(mapStateToProps)(Render);
 
 export default App;

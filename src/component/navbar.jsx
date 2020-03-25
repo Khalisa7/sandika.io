@@ -9,7 +9,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 const Navbar = (props) => {
-    const { toggleIcon, logo, link } = props;
+    const { megamenu, toggleIcon, logo, link } = props;
     const [searchFormState, setSearchFormState] = useState(false);
     const [searchKey, setSearchKey] = useState('');
 
@@ -40,7 +40,9 @@ const Navbar = (props) => {
                         <div className={searchFormState ? "search-container active" : "search-container"}>
                             <div className="d-flex my-2 my-lg-0">
                                 <div className="search-category mr-2 d-none d-md-inline-block">
-                                    <Megamenu/>
+                                    <Megamenu
+                                        megamenuContent = {megamenu}
+                                    />
                                 </div>
                                 <div className="search-form">
                                     <SearchForm
@@ -106,6 +108,7 @@ Navbar.defaultProps = {
     },
     toggleIcon: null,
     user_login: false,
+    megamenu: null,
     link: []
 };
 
@@ -113,6 +116,7 @@ Navbar.propTypes = {
     logo: PropTypes.object.isRequired,
     toggleIcon: PropTypes.object,
     user_login: PropTypes.bool.isRequired,
+    megamenu: PropTypes.array,
     link: PropTypes.array.isRequired
 };
 

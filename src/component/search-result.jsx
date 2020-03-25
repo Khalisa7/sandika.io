@@ -24,6 +24,7 @@ const SearchResult = (props) => {
     };
 
     const previousSearchKey = usePrevious(searchKey);
+    const tempRow = [];
 
     // Sorting Product
     products.sort((a, b) => {
@@ -49,7 +50,17 @@ const SearchResult = (props) => {
                     <div className="img-thumbs">
                         <img src={res.img} srcSet=""/>
                     </div>
-                    <div className="media-body align-self-center">
+                    <div className="media-body">
+                        <p>{res.name}</p>
+                    </div>
+                </div>
+            );
+            tempRow.push(
+                <div className="media" key={i}>
+                    <div className="img-thumbs">
+                        <img src={res.img} srcSet=""/>
+                    </div>
+                    <div className="media-body">
                         <p>{res.name}</p>
                     </div>
                 </div>
@@ -62,7 +73,7 @@ const SearchResult = (props) => {
                     <div className="img-thumbs">
                         <img src={res.img} srcSet=""/>
                     </div>
-                    <div className="media-body align-self-center">
+                    <div className="media-body">
                         <p>{res.name}</p>
                     </div>
                 </div>

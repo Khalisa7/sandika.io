@@ -1,0 +1,108 @@
+@media (min-width: 480px){
+    .footer{
+        border-top: 3px solid $color-border;
+        padding: 40px 0;
+        .footer-title{
+            font-weight: 700;
+            font-family: 'OS Bold';
+            font-size: 1rem;
+            color: $color-text;
+        }
+        ul.footer-links{
+            list-style-type: none;
+            padding-left: 0;
+            li{
+                color: $color-text;
+            }
+        }
+        ul.footer-social-links{
+            list-style: none;
+            padding-left: 0;
+            li{
+                float: left;
+                margin-right: 15px;
+                *{
+                    font-size: 24px;
+                }
+                .fa-facebook-f{
+                    color:#4267b2;
+                }
+                .fa-instagram{
+                    color:#d6249f;
+                }
+                .fa-twitter{
+                    color: #38A1F3;
+                }
+            }
+        }
+        form{
+            .form-control, .btn{
+                border-radius: 5px;
+            }
+            .btn{
+                background-color: $color-logo;
+                color: white;
+
+            }
+            .form-control{
+                width: 100%;
+                border: 1px solid #f3f3f3;
+                background: #f3f3f3;
+            }
+        }
+    }
+}
+@media (max-width: 480px){
+    .footer{
+        border-top: 3px solid $color-border;
+        padding: 40px 0;
+        .footer-title{
+            font-weight: 700;
+            font-family: 'OS Bold';
+            font-size: 1rem;
+            color: $color-text;
+        }
+        ul.footer-links{
+            list-style-type: none;
+            padding-left: 0;
+            li{
+                color: $color-text;
+            }
+        }
+        ul.footer-social-links{
+            list-style: none;
+            padding-left: 0;
+            li{
+                float: left;
+                margin-right: 15px;
+                *{
+                    font-size: 20px;
+                }
+                .fa-facebook-f{
+                    color:#4267b2;
+                }
+                .fa-instagram{
+                    color:#d6249f;
+                }
+                .fa-twitter{
+                    color: #38A1F3;
+                }
+            }
+        }
+        form{
+            .form-control, .btn{
+                border-radius: 5px;
+            }
+            .btn{
+                background-color: $color-logo;
+                color: white;
+                
+            }
+            .form-control{
+                width: 100%;
+                border: 1px solid #f3f3f3;
+                background: #f3f3f3;
+            }
+        }
+    }
+}
