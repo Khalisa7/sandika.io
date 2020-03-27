@@ -78,7 +78,7 @@ const Navbar = (props) => {
                                             return (
                                                 <li className="nav-item" key={i} >
                                                     <Link to={res._routes} className={res._style}>
-                                                        <ShoppingBasketIcon onClick={() => {setQuickcartState(!quickcartState);}}>
+                                                        <ShoppingBasketIcon onClick={(e) => {e.preventDefault(); setQuickcartState(!quickcartState);}}>
                                                             <SvgIcon>
                                                                 <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
                                                             </SvgIcon>
