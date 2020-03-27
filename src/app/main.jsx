@@ -46,9 +46,9 @@ const Render = (props) => {
                     </Switch>
 
                 </Content>
+                {/* <Brands/> */}
+                <Footer/>
             </Suspense>
-            {/* <Brands/> */}
-            <Footer/>
         </Fragment>
     );
 };
