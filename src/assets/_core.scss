@@ -32,6 +32,10 @@
 
 html, body { height: 100%; }
 
+h1, h2, h3, h4, h5, h6{
+    color: $color-text;
+}
+
 p, a, small, button, .btn{
     font-family: 'OS Regular',tahoma,sans-serif;
     line-height: 1.5;
@@ -124,10 +128,12 @@ a{
 @media (min-width : 480px){
     .page{
         padding-top: 55px;
+        background: #f7f7f7;
     }
 }
 @media (max-width : 480px){
     .page{
         padding-top: 65px;
+        background: #f7f7f7;
     }
 }

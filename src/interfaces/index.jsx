@@ -25,6 +25,12 @@ const interfaces = {
         },
         {
             _type: 'link',
+            _label: 'Wishlist',
+            _routes: '/wishlist',
+            _style: 'nav-link wishlist'
+        },
+        {
+            _type: 'link',
             _label: 'Cart',
             _routes: '/cart',
             _style: 'nav-link quickcart'

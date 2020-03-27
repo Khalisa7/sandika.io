@@ -1,0 +1,159 @@
+@media (min-width: 980px){
+    .quickcart-wrapper{
+        position: relative;
+        &.active{
+            .quickcart-overlay{
+                right: 0;
+            }
+            .quickcart-content{
+                right: 0;
+                transition: .5s ease;
+            }
+        }
+        .quickcart-overlay{
+            background-color: rgba(0,0,0,.5);
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            bottom: 0;
+        }
+        .quickcart-content{
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 320px;
+            background: white;
+            bottom: 0;
+            padding: 5px;
+            .quickcart-header{
+                display: block;
+                padding: 20px;
+                margin: auto;
+                text-align: center;
+                background: $color-logo;
+                border-radius: 5px;
+                color: white;
+            }
+            .quickcart-footer{
+                bottom: 0;
+                position: absolute;
+                right: 0;
+                left: 0;
+                margin: 5px;
+                text-align: center;
+                border-radius: 5px;
+                color: white;
+                .btn-lg{
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 480px) and (max-width: 980px){
+    .quickcart-wrapper{
+        position: relative;
+        &.active{
+            .quickcart-overlay{
+                right: 0;
+            }
+            .quickcart-content{
+                right: 0;
+                transition: .5s ease;
+            }
+        }
+        .quickcart-overlay{
+            background-color: rgba(0,0,0,.5);
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            bottom: 0;
+        }
+        .quickcart-content{
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 320px;
+            background: white;
+            bottom: 0;
+            padding: 5px;
+            .quickcart-header{
+                display: block;
+                padding: 20px;
+                margin: auto;
+                text-align: center;
+                background: $color-logo;
+                border-radius: 5px;
+                color: white;
+            }
+            .quickcart-footer{
+                bottom: 0;
+                position: absolute;
+                right: 0;
+                left: 0;
+                margin: 5px;
+                text-align: center;
+                border-radius: 5px;
+                color: white;
+                .btn-lg{
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 480px){
+    .quickcart-wrapper{
+        position: relative;
+        &.active{
+            .quickcart-overlay{
+                right: 0;
+            }
+            .quickcart-content{
+                right: 0;
+                transition: .5s ease;
+            }
+        }
+        .quickcart-overlay{
+            background-color: rgba(0,0,0,.5);
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            bottom: 0;
+        }
+        .quickcart-content{
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 320px;
+            background: white;
+            bottom: 0;
+            padding: 5px;
+            .quickcart-header{
+                display: block;
+                padding: 20px;
+                margin: auto;
+                text-align: center;
+                background: $color-logo;
+                border-radius: 5px;
+                color: white;
+            }
+            .quickcart-footer{
+                bottom: 0;
+                position: absolute;
+                right: 0;
+                left: 0;
+                margin: 5px;
+                text-align: center;
+                border-radius: 5px;
+                color: white;
+                .btn-lg{
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}

@@ -120,9 +120,11 @@
                     color: $color-text;
                 }
         
-                .nav-link.quickcart{
+                .nav-link.quickcart,
+                .nav-link.wishlist{
                     font-size: 12px;
                     padding-right: 0;
+                    color: $color-logo;
                     span{
                         display: none;
                     }
@@ -253,9 +255,11 @@
                     color: $color-text;
                 }
         
-                .nav-link.quickcart{
+                .nav-link.quickcart,
+                .nav-link.wishlist{
                     font-size: 12px;
                     padding-right: 0;
+                    color: $color-logo;
                     span{
                         display: none;
                     }
@@ -398,9 +402,11 @@
                     .nav-link{
                         vertical-align: bottom;
                         color: $color-logo;
+                        display: none;
                     }
-                    .nav-link.quickcart{
+                    .nav-link.wishlist{
                         font-size: 12px;
+                        display: block;
                         span{
                             display: none;
                         }

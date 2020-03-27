@@ -1,21 +1,22 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Megamenu from '@src/component/megamenu';
-import SearchForm from '@src/component/search-form';
-import SearchResult from '@src/component/search-result';
-
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import React, { Fragment, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import Megamenu from "@src/component/megamenu";
+import SearchForm from "@src/component/search-form";
+import SearchResult from "@src/component/search-result";
+import QuickCart from "@src/component/quickcart";
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import SvgIcon from "@material-ui/core/SvgIcon";
 
 const Navbar = (props) => {
     const { megamenu, toggleIcon, logo, link } = props;
     const [searchFormState, setSearchFormState] = useState(false);
-    const [searchKey, setSearchKey] = useState('');
+    const [searchKey, setSearchKey] = useState("");
+    const [quickcartState, setQuickcartState] = useState(false);
 
     useEffect(() => {
-        console.log(searchFormState);
-        return searchFormState ? document.body.classList.add('search-open') : document.body.classList.remove('search-open');
+        return searchFormState ? document.body.classList.add("search-open") : document.body.classList.remove("search-open");
     });
 
     const handleSearchFormFocus = () => {
@@ -59,16 +60,52 @@ const Navbar = (props) => {
                         <div className="navbar-right float-right">
                             <ul className=" nav justify-content-end">
                                 { link.map((res, i) => {
-                                    if (res._type === 'link') {
-                                        return (
-                                            <li className="nav-item" key={i} >
-                                                <Link to={res._routes} className={res._style}>
-                                                    {res._label === 'Cart' ?
-                                                        <ShoppingCartIcon>
+                                    if (res._type === "link") {
+                                        if (res._label === "Wishlist") {
+                                            return (
+                                                <li className="nav-item" key={i} >
+                                                    <Link to={res._routes} className={res._style}>
+                                                        <FavoriteIcon>
                                                             <SvgIcon>
                                                                 <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
                                                             </SvgIcon>
-                                                        </ShoppingCartIcon> :
+                                                        </FavoriteIcon>
+                                                        <span>{res._label}</span>
+                                                    </Link>
+                                                </li>
+                                            );
+                                        } else if (res._label === "Cart") {
+                                            return (
+                                                <li className="nav-item" key={i} >
+                                                    <Link to={res._routes} className={res._style}>
+                                                        <ShoppingBasketIcon onClick={() => {setQuickcartState(!quickcartState);}}>
+                                                            <SvgIcon>
+                                                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                            </SvgIcon>
+                                                        </ShoppingBasketIcon>
+                                                        <span>{res._label}</span>
+                                                    </Link>
+                                                </li>
+                                            );
+                                        } else {
+                                            return (
+                                                <li className="nav-item" key={i} >
+                                                    <Link to={res._routes} className={res._style}>
+                                                        <span>{res._label}</span>
+                                                    </Link>
+                                                </li>
+                                            );
+                                        }
+                                    } else if (res._type === "link") {
+                                        return (
+                                            <li className="nav-item" key={i} >
+                                                <Link to={res._routes} className={res._style}>
+                                                    {res._label === "Wishlist" ?
+                                                        <FavoriteIcon onClick={() => {setQuickcartState(!quickcartState);}}>
+                                                            <SvgIcon>
+                                                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                            </SvgIcon>
+                                                        </FavoriteIcon> :
                                                         null }
                                                     <span>{res._label}</span>
                                                 </Link>
@@ -95,6 +132,7 @@ const Navbar = (props) => {
                         </div>
                     </div>
                 </nav>
+                <QuickCart open={quickcartState} close={() => {setQuickcartState(false);}}/>
             </header>
         </Fragment>
     );
@@ -102,9 +140,9 @@ const Navbar = (props) => {
 
 Navbar.defaultProps = {
     logo: {
-        _src: '',
-        _alt: '',
-        _label: ''
+        _src: "",
+        _alt: "",
+        _label: ""
     },
     toggleIcon: null,
     user_login: false,

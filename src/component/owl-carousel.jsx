@@ -26,7 +26,10 @@ OwlSlider.defaultProps = {
 
 OwlSlider.propTypes = {
     options: PropTypes.object.isRequired,
-    children: PropTypes.node
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
 };
 
 export default OwlSlider;

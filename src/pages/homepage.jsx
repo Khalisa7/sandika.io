@@ -8,7 +8,6 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-
 const mapStateToProps = state => {
     return { cateoryIcon: state.cateoryIcon };
 };
@@ -65,8 +64,7 @@ const Render = (props) => {
             480: {
                 loop: false,
                 items: 4,
-                margin: 0,
-                nav: true
+                margin: 0
             },
             980: {
                 loop: false,

@@ -1,24 +1,20 @@
 import React, { lazy } from "react";
 const Homepage = lazy(() => import("@src/pages/homepage"));
+const Catalog = lazy(() => import("@src/pages/catalog"));
+const Dashboard = lazy(() => import("@src/pages/dashboard"));
 
 const routes = [
     {
         path: "/",
-        component: () => {return (<Homepage/>);},
-        routes: [
-            {
-                path: "/product",
-                component: () => {return (<Homepage/>);}
-            },
-            {
-                path: "/detail",
-                component: () => {return (<Homepage/>);}
-            }
-        ]
+        component: () => {return (<Homepage/>);}
     },
     {
         path: "/dashboard",
-        component: () => {return (<Homepage/>);}
+        component: () => {return (<Dashboard/>);}
+    },
+    {
+        path: "/:slug",
+        component: () => {return (<Catalog/>);}
     }
 ];
 

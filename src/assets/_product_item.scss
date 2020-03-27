@@ -1,0 +1,261 @@
+@media (min-width: 980px){
+    .product-item-wrapper{
+        padding:5px;
+        .card{
+            border-radius: 10px;
+            border-width: 1;
+            min-height: 330px;
+            overflow: hidden;
+            position: relative;
+            border-color: white;
+            &:hover{
+                border-width: 1px;
+                border-color: $color-logo;
+                transition: .5s ease;
+            }
+            .card-img{
+                max-height: 150px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+            }
+            .card-body{
+                padding:10px;
+                position: relative;
+                small{
+                    font-size: 10px;
+                    .store{
+                        color: $color-logo;
+                    }
+                }
+                p{
+                    margin-bottom: 0;
+                    &.product-brand, &.product-name{
+                        font-family: 'OS SemiBold';
+                        font-size: 12px;
+                    }
+                    &.product-name{
+                        color: #dc732d;
+                        font-size: 14px;
+                    }
+                }
+                .price-wrapper{
+                    display: block;
+                    position: absolute;
+                    bottom: 5px;
+                    .label{
+                        display: inline-block;
+                        padding-right: 5px;
+                    }
+                    .special-price p{
+                        color: #dc732d;
+                        font-family: 'OS SemiBold';
+                        font-size: 14px;
+                    }
+                    .old-price{
+                        font-family: 'OS Regular';
+                        text-decoration: line-through;
+                        font-size: 12px;
+                    }
+                }
+            }
+            .card-footer{
+                background: none;
+                border: none;
+                text-align: center;
+                padding:10px;
+                .btn{
+                    color: white;
+                }
+            }
+            .card-action-wishlist{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                button{
+                    background: white;
+                    padding: 7px 0px;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    border-width: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) and (max-width: 980px){
+    .product-item-wrapper{
+        margin-bottom: 15px;
+        padding:5px;
+        .card{
+            border-radius: 10px;
+            min-height: 350px;
+            border-width: 1px;
+            overflow: hidden;
+            position: relative;
+            border-color: white;
+            &:hover{
+                border-width: 1px;
+                border-color: $color-logo;
+                transition: .5s ease;
+            }
+            .card-img{
+                max-height: 150px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+            }
+            .card-body{
+                padding:10px;
+                position: relative;
+                small{
+                    font-size: 10px;
+                    .store{
+                        color: $color-logo;
+                    }
+                }
+                p{
+                    margin-bottom: 0;
+                    &.product-brand, &.product-name{
+                        font-family: 'OS SemiBold';
+                    }
+                    &.product-name{
+                        color: #dc732d;
+                        font-size: 14px;
+                    }
+                }
+                .price-wrapper{
+                    display: block;
+                    position: absolute;
+                    bottom: 5px;
+                    .label{
+                        display: inline-block;
+                        padding-right: 15px;
+                    }
+                    .special-price p{
+                        color: #dc732d;
+                        font-family: 'OS SemiBold';
+                        font-size: 14px;
+                    }
+                    .old-price{
+                        font-family: 'OS Regular';
+                        text-decoration: line-through;
+                    }
+                }
+            }
+            .card-footer{
+                background: none;
+                border: none;
+                text-align: center;
+                padding: 10px;
+                .btn{
+                    color: white;
+                }
+            }
+            .card-action-wishlist{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                button{
+                    background: white;
+                    padding: 7px 0px;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    border-width: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .product-item-wrapper{
+        margin-bottom: 15px;
+        padding:5px;
+        .card{
+            border-radius: 5px;
+            border-width: 1px;
+            min-height: 340px;
+            overflow: hidden;
+            position: relative;
+            border-color: white;
+            &:hover{
+                border-width: 1px;
+                border-color: $color-logo;
+                transition: .5s ease;
+            }
+            .card-img{
+                max-height: 150px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+            }
+            .card-body{
+                padding:10px;
+                position: relative;
+                small{
+                    font-size: 10px;
+                    .store{
+                        color: $color-logo;
+                    }
+                }
+                p{
+                    margin-bottom: 0;
+                    &.product-brand, &.product-name{
+                        font-family: 'OS SemiBold';
+                    }
+                    &.product-name{
+                        color: #dc732d;
+                        font-size: 14px;
+                    }
+                }
+                .price-wrapper{
+                    display: block;
+                    position: absolute;
+                    bottom: 15px;
+                    .label{
+                        display: inline-block;
+                        padding-right: 15px;
+                    }
+                    .special-price p{
+                        color: #dc732d;
+                        font-family: 'OS SemiBold';
+                        font-size: 14px;
+                    }
+                    .old-price{
+                        font-family: 'OS Regular';
+                        text-decoration: line-through;
+                    }
+                }
+            }
+            .card-footer{
+                background: none;
+                border: none;
+                text-align: center;
+                padding: 5px;
+                .btn{
+                    color: white;
+                }
+            }
+            .card-action-wishlist{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                button{
+                    background: white;
+                    padding: 7px 0px;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    border-width: 0;
+                }
+            }
+        }
+    }
+}

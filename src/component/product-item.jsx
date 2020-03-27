@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import SvgIcon from "@material-ui/core/SvgIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStore } from "@fortawesome/free-solid-svg-icons";
+// import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const ProductItem = (props) => {
     const { label } = props;
@@ -20,16 +23,25 @@ const ProductItem = (props) => {
                         <p className="product-brand">Product Brand</p>
                         <div className="price-wrapper">
                             <div className="label old-price">
-                                <p className="price">Rp 20.000,-</p>
+                                <p className="price">Rp 23.000,-</p>
                             </div>
                             <div className="label special-price">
                                 <p className="price">Rp 20.000,-</p>
                             </div>
                         </div>
                     </div>
-                    {/* <div className="card-footer">
-                        <a href="#" className="btn btn-warning btn-block">Lihat Detail</a>
-                    </div> */}
+                    <div className="card-footer">
+                        <a href="#" className="btn btn-warning btn-block"><strong>Beli</strong></a>
+                    </div>
+                    <div className="card-action-wishlist">
+                        <button>
+                            <FavoriteIcon fontSize={"small"}>
+                                <SvgIcon>
+                                    <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                </SvgIcon>
+                            </FavoriteIcon>
+                        </button>
+                    </div>
                 </div>
             </div>
         </Fragment>

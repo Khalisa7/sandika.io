@@ -40,7 +40,6 @@ const SearchResult = (props) => {
 
     // Push To ROW
     if (searchKey.length !== 0 && searchKey !== previousSearchKey) {
-        console.log(searchKey);
         products.map((res, i) => {
             if (res.name.indexOf(searchKey) === -1) {
                 return -1;
