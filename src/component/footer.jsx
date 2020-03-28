@@ -39,8 +39,12 @@ const Footer = () => {
                             <form className="form subscribe mb-3">
                                 <div className="form-row justify-content-center">
                                     <div className="form-group col-8">
-                                        <input type="email" className="form-control" id="uEmail" aria-describedby="uEmail" placeholder="Masukkan alamat email Anda..."/>
-                                        {/* <small className="form-text text-muted">Masukan tanggal checkin yang diinginkan.</small> */}
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            id="uEmail"
+                                            aria-describedby="uEmail"
+                                            placeholder="Masukkan alamat email Anda..."/>
                                     </div>
                                     <div className="form-group col-4">
                                         <button type="submit" className="btn btn-block">Cari</button>

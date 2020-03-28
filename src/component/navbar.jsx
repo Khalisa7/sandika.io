@@ -16,11 +16,13 @@ const Navbar = (props) => {
     const [quickcartState, setQuickcartState] = useState(false);
 
     useEffect(() => {
-        return searchFormState ? document.body.classList.add("search-open") : document.body.classList.remove("search-open");
+        return searchFormState ?
+            document.body.classList.add("search-open") :
+            document.body.classList.remove("search-open");
     });
 
-    const handleSearchFormFocus = () => {
-        setSearchFormState(!searchFormState);
+    const handleSearchFormFocus = ($value) => {
+        setSearchFormState($value);
     };
 
     const handleSearchKey = ($value) => {
@@ -33,10 +35,18 @@ const Navbar = (props) => {
                 <nav className="navbar navbar-expand-lg p-2">
                     <div className="container">
                         <div className="toggle-logo">
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button className="navbar-toggler"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
                                 {toggleIcon}
                             </button>
-                            <a className="navbar-brand d-none d-md-inline-block" href="#">{logo._label}</a>
+                            <Link to={"/"} className="navbar-brand d-none d-md-inline-block">
+                                {logo._label}
+                            </Link>
                         </div>
                         <div className={searchFormState ? "search-container active" : "search-container"}>
                             <div className="d-flex my-2 my-lg-0">
@@ -47,8 +57,8 @@ const Navbar = (props) => {
                                 </div>
                                 <div className="search-form">
                                     <SearchForm
-                                        onFocus={handleSearchFormFocus}
-                                        onBlur={handleSearchFormFocus}
+                                        onClick={handleSearchFormFocus}
+                                        onClickOutside={handleSearchFormFocus}
                                         onChange={handleSearchKey}
                                     />
                                     <SearchResult
@@ -67,7 +77,9 @@ const Navbar = (props) => {
                                                     <Link to={res._routes} className={res._style}>
                                                         <FavoriteIcon>
                                                             <SvgIcon>
-                                                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                                <path d="M20 12l-1.41-1.41L13
+                                                                    16.17V4h-2v12.17l-5.58-5.59L4
+                                                                    12l8 8 8-8z" />
                                                             </SvgIcon>
                                                         </FavoriteIcon>
                                                         <span>{res._label}</span>
@@ -77,10 +89,17 @@ const Navbar = (props) => {
                                         } else if (res._label === "Cart") {
                                             return (
                                                 <li className="nav-item" key={i} >
-                                                    <Link to={res._routes} className={res._style}>
-                                                        <ShoppingBasketIcon onClick={(e) => {e.preventDefault(); setQuickcartState(!quickcartState);}}>
+                                                    <Link to={res._routes}
+                                                        className={res._style}
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            setQuickcartState(!quickcartState);
+                                                        }}>
+                                                        <ShoppingBasketIcon>
                                                             <SvgIcon>
-                                                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                                <path d="M20 12l-1.41-1.41L13
+                                                                    16.17V4h-2v12.17l-5.58-5.59L4
+                                                                    12l8 8 8-8z" />
                                                             </SvgIcon>
                                                         </ShoppingBasketIcon>
                                                         <span>{res._label}</span>
@@ -101,9 +120,12 @@ const Navbar = (props) => {
                                             <li className="nav-item" key={i} >
                                                 <Link to={res._routes} className={res._style}>
                                                     {res._label === "Wishlist" ?
-                                                        <FavoriteIcon onClick={() => {setQuickcartState(!quickcartState);}}>
+                                                        <FavoriteIcon
+                                                            onClick={() => {setQuickcartState(!quickcartState);}}>
                                                             <SvgIcon>
-                                                                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                                <path d="M20 12l-1.41-1.41L13
+                                                                    16.17V4h-2v12.17l-5.58-5.59L4
+                                                                    12l8 8 8-8z"/>
                                                             </SvgIcon>
                                                         </FavoriteIcon> :
                                                         null }
@@ -114,13 +136,21 @@ const Navbar = (props) => {
                                     } else {
                                         return (
                                             <li className="nav-item dropdown" key={i}>
-                                                <a className="nav-link dropdown-toggle" href="#" id={"navbar-dropdown-" + i} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a className="nav-link dropdown-toggle"
+                                                    href="#" id={"navbar-dropdown-" + i}
+                                                    role="button"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false">
                                                     {res._label}
                                                 </a>
-                                                <div className="dropdown-menu dropdown-menu-right" aria-labelledby={"navbar-dropdown-" + i}>
+                                                <div className="dropdown-menu dropdown-menu-right"
+                                                    aria-labelledby={"navbar-dropdown-" + i}>
                                                     { res._item.map((res, i) => {
                                                         return (
-                                                            <Link to={res._routes} className="dropdown-item" key={i}>{res._label}</Link>
+                                                            <Link to={res._routes}
+                                                                className="dropdown-item"
+                                                                key={i}>{res._label}</Link>
                                                         );
                                                     }) }
                                                 </div>

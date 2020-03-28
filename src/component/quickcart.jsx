@@ -15,8 +15,10 @@ const QuickCart = (props) => {
                         { children }
                     </div>
                     <div className="quickcart-footer">
-                        <a href="#" className="btn btn-lg btn-block btn-warning text-white">Periksa Keranjang Belanja</a>
-                        <a href="#" className="btn btn-lg btn-block btn-success text-white">Lanjut Ke Checkout</a>
+                        <a href="#"
+                            className="btn btn-lg btn-block btn-warning text-white">Periksa Keranjang Belanja</a>
+                        <a href="#"
+                            className="btn btn-lg btn-block btn-success text-white">Lanjut Ke Checkout</a>
                     </div>
                 </div>
             </div>

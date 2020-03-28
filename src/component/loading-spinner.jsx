@@ -3,7 +3,9 @@ import React, { Fragment } from 'react';
 const LoadingSpinner = (props) => {
     return (
         <Fragment>
-            <div className="loading">Loading Message</div>
+            <div className="loading">
+                <h4>Sandika</h4>
+            </div>
         </Fragment>
     );
 };

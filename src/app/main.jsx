@@ -22,7 +22,7 @@ const Render = (props) => {
     const { pathname } = useLocation();
     return (
         <Fragment>
-            <Suspense fallback={<LoadingSpinner/>} >
+            <Suspense fallback={<LoadingSpinner/>} fallbackMinDurationMs={1500} >
                 <Navbar
                     logo={logo}
                     user_login={user}

@@ -1,9 +1,6 @@
 {
     "parser": "babel-eslint",
     "extends": "react",
-    "rules": {
-        "max-len": 0
-    },
     "env": {
         "browser": true,
         "node": true,

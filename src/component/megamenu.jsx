@@ -10,14 +10,19 @@ const Megamenu = (props) => {
                 <button className="btn" type="button" onClick={() => { setActive(!active); }} >
                     Kategori
                 </button>
-                <div className={active ? "dropdown-menu megamenu-wrapper show" : "dropdown-menu megamenu-wrapper"} aria-labelledby="dropdownMenuButton">
+                <div className={active ? "dropdown-menu megamenu-wrapper show" : "dropdown-menu megamenu-wrapper"}
+                    aria-labelledby="dropdownMenuButton">
                     <div className="megamenu-content">
                         <div className="megamenu-tabs">
                             <ul className="nav nav-tabs" role="tablist">
                                 { megamenuContent.map((res, i) => {
                                     return (
                                         <li className="nav-item" key={i}>
-                                            <a className={i === 0 ? "nav-link active" : "nav-link"} data-toggle="tab" href={"#megamenu-tabs-" + i} role="tab" aria-controls="home" aria-selected="true">{res._title}</a>
+                                            <a className={i === 0 ? "nav-link active" : "nav-link"}
+                                                data-toggle="tab" href={"#megamenu-tabs-" + i}
+                                                role="tab"
+                                                aria-controls="home"
+                                                aria-selected="true">{res._title}</a>
                                         </li>
                                     );
                                 }) }
@@ -25,7 +30,10 @@ const Megamenu = (props) => {
                             <div className="tab-content p-3">
                                 { megamenuContent.map((res, i) => {
                                     return (
-                                        <div className={i === 0 ? "tab-pane fade show active" : "tab-pane fade"} id={"megamenu-tabs-" + i} key={i} role="tabpanel" aria-labelledby="home-tab">
+                                        <div className={i === 0 ? "tab-pane fade show active" : "tab-pane fade"}
+                                            id={"megamenu-tabs-" + i}
+                                            key={i} role="tabpanel"
+                                            aria-labelledby="home-tab">
                                             {res._item.map((res, i) => {
                                                 return (
                                                     <p key={i}>{res._label}</p>
@@ -39,7 +47,8 @@ const Megamenu = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className={active ? "megamenu-overlay show" : "megamenu-overlay"} onClick={() => {setActive(!active);}} />
+                <div className={active ? "megamenu-overlay show" : "megamenu-overlay"}
+                    onClick={() => {setActive(!active);}} />
             </div>
         </Fragment>
     );

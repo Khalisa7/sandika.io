@@ -15,14 +15,21 @@ const Render = (props) => {
                         <h5 className="page-title mb-3">Filter Pencarian</h5>
                         <div className="card">
                             <div className="card-header">
-                                <h6 className="mb-0" data-toggle="collapse" data-target="#filterSection1" aria-expanded="false" aria-controls="filterSection1">
+                                <h6 className="mb-0"
+                                    data-toggle="collapse"
+                                    data-target="#filterSection1"
+                                    aria-expanded="false"
+                                    aria-controls="filterSection1">
                                     Kategori
                                 </h6>
                             </div>
                             <div className="collapse" id="filterSection1">
                                 <div className="card-body">
                                     <p>
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high
+                                        life accusamus terry richardson ad squid.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes
+                                        anderson cred nesciunt sapiente ea proident.
                                     </p>
                                 </div>
                             </div>
