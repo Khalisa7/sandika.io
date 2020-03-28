@@ -36,10 +36,10 @@ h1, h2, h3, h4, h5, h6{
     color: $color-text;
 }
 
-p, a, small, button, .btn{
+p, a, small, button, .btn, span, label{
     font-family: 'OS Regular',tahoma,sans-serif;
     line-height: 1.5;
-    font-size: 0.8em;
+    font-size: 12px;
     color: $color-text;
 }
 
