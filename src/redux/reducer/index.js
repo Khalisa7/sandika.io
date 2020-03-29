@@ -1,8 +1,113 @@
-import { ADD_ARTICLE } from "@src/redux/constants/action-types";
-
 // Initial States
 const initialState = {
-    articles: [],
+    app: {
+        _name: 'Amind',
+        _version: '1.0 Beta',
+        _owner: 'Herlina Sunaryanto'
+    },
+    bannerCarousel: [
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        },
+        {
+            _mobile: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy_mobile.png",
+            _desktop: "https://www.thebodyshop.co.id/media/weltpixel/owlcarouselslider/images/d/o/doy.png"
+        }
+    ],
+    cateoryIcon: [
+        {
+            _label: "Ibu Bayi Dan Anak",
+            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/i/b/ibu-bayi-anak_4.png"
+        },
+        {
+            _label: "Wanita",
+            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/w/a/wanita.png"
+        },
+        {
+            _label: "Pria",
+            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/p/r/pria.png"
+        },
+        {
+            _label: "Cairan Pembersih",
+            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/c/a/cairan.png"
+        },
+        {
+            _label: "Perawatan Tubuh",
+            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/p/e/perawatan-diri.png"
+        },
+        {
+            _label: "Home And Living",
+            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/f/u/furniture.png"
+        },
+        {
+            _label: "Perlengkapan Alat Tulis Dan Kantor",
+            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/a/l/alat-tulis.png"
+        },
+        {
+            _label: "Elektronik",
+            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/p/e/perabot.png"
+        }
+    ],
+    logo: {
+        _src: 'https://sleekr.co/wp-content/themes/sleekr_08/images/icon/icon-sleekr.svg',
+        _alt: 'Sandika Partner',
+        _label: 'Sandika'
+    },
+    navbarLink: [
+        {
+            _type: 'link',
+            _label: 'Login',
+            _routes: '/login',
+            _style: 'd-none d-md-block nav-link customer-login'
+        },
+        {
+            _type: 'link',
+            _label: 'Register',
+            _routes: '/register',
+            _style: 'd-none d-md-block nav-link customer-register'
+        },
+        {
+            _type: 'link',
+            _label: 'Wishlist',
+            _routes: '/wishlist',
+            _style: 'nav-link wishlist'
+        },
+        {
+            _type: 'link',
+            _label: 'Cart',
+            _routes: '/cart',
+            _style: 'nav-link quickcart'
+        }
+    ],
     megamenuContent: [
         {
             _title: "Hot Deals",
@@ -66,38 +171,105 @@ const initialState = {
             ]
         }
     ],
-    cateoryIcon: [
+    layeredSearchForm: [
         {
-            _label: "Ibu Bayi Dan Anak",
-            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/i/b/ibu-bayi-anak_4.png"
+            _type: "category",
+            _title: "Category",
+            _label: "Kategori",
+            _form: [
+                {
+                    _name: "cb_checkbox",
+                    _type: "checkbox",
+                    _label: "Handphone and Gadget",
+                    _value: "handphone",
+                    _badge: 14
+                },
+                {
+                    _name: "cb_checkbox",
+                    _type: "checkbox",
+                    _label: "Suits",
+                    _value: "suits",
+                    _badge: 509
+                },
+                {
+                    _name: "cb_checkbox",
+                    _type: "checkbox",
+                    _label: "Car",
+                    _value: "car",
+                    _badge: 1133
+                },
+                {
+                    _name: "cb_checkbox",
+                    _type: "checkbox",
+                    _label: "Bike",
+                    _value: "bike",
+                    _badge: 114
+                },
+                {
+                    _name: "cb_checkbox",
+                    _type: "checkbox",
+                    _label: "Laptop",
+                    _value: "laptop",
+                    _badge: 1444
+                },
+                {
+                    _name: "cb_checkbox",
+                    _type: "checkbox",
+                    _label: "Home Living",
+                    _value: "home living",
+                    _badge: 1409
+                },
+                {
+                    _name: "cb_checkbox",
+                    _type: "checkbox",
+                    _label: "Goodie Bag",
+                    _value: "goodie bag",
+                    _badge: 14
+                }
+            ]
         },
         {
-            _label: "Wanita",
-            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/w/a/wanita.png"
-        },
-        {
-            _label: "Pria",
-            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/p/r/pria.png"
-        },
-        {
-            _label: "Cairan Pembersih",
-            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/c/a/cairan.png"
-        },
-        {
-            _label: "Perawatan Tubuh",
-            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/p/e/perawatan-diri.png"
-        },
-        {
-            _label: "Home And Living",
-            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/f/u/furniture.png"
-        },
-        {
-            _label: "Perlengkapan Alat Tulis Dan Kantor",
-            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/a/l/alat-tulis.png"
-        },
-        {
-            _label: "Elektronik",
-            _icon_img: "https://www.yogyaonline.co.id/media/weltpixel/owlcarouselslider/images/p/e/perabot.png"
+            _type: "price",
+            _title: "Price",
+            _label: "Kisaran Harga",
+            _form: [
+                {
+                    _name: "rb_price",
+                    _type: "radio",
+                    _label: "Rp 0,00 - Rp 500.000,00",
+                    _value: "1"
+                },
+                {
+                    _name: "rb_price",
+                    _type: "radio",
+                    _label: "Rp 500.000,00 - Rp 1.000.000,00",
+                    _value: "2"
+                },
+                {
+                    _name: "rb_price",
+                    _type: "radio",
+                    _label: "Rp 1.000.000,00 - Rp 1.500.000,00",
+                    _value: "3"
+                },
+                {
+                    _name: "rb_price",
+                    _type: "radio",
+                    _label: "Rp 1.500.000,00 - Rp 5.000.000,00",
+                    _value: "4"
+                },
+                {
+                    _name: "rb_price",
+                    _type: "radio",
+                    _label: "Rp 5.000.000,00 - Rp 10.000.000,00",
+                    _value: "5"
+                },
+                {
+                    _name: "rb_price",
+                    _type: "radio",
+                    _label: "> Rp 10.000.000,00",
+                    _value: "5"
+                }
+            ]
         }
     ]
 };
@@ -105,11 +277,6 @@ const initialState = {
 
 function rootReducer (state = initialState, action) {
     switch (action.type) {
-        case ADD_ARTICLE:
-            return Object.assign({}, state, {
-                articles: state.articles.concat(action.payload)
-            });
-
         default:
             return state;
     }

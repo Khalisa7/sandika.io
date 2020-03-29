@@ -4,7 +4,6 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStore } from "@fortawesome/free-solid-svg-icons";
-// import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const ProductItem = (props) => {
     const { label } = props;

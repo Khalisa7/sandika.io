@@ -23,6 +23,9 @@
                     &:last-child{
                         border-bottom-left-radius: 5px;
                         border-bottom-right-radius: 5px;
+                        button.btn{
+                            color: white;
+                        }
                     }
                     .card-header{
                         background-color: white;

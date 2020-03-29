@@ -8,9 +8,18 @@ import QuickCart from "@src/component/quickcart";
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import SvgIcon from "@material-ui/core/SvgIcon";
+import { connect } from "react-redux";
 
-const Navbar = (props) => {
-    const { megamenu, toggleIcon, logo, link } = props;
+const mapStateToProps = state => {
+    return {
+        logo: state.logo,
+        navbarLink: state.navbarLink,
+        megamenuContent: state.megamenuContent
+    };
+};
+
+const Render = (props) => {
+    const { toggleIcon, logo, navbarLink } = props;
     const [searchFormState, setSearchFormState] = useState(false);
     const [searchKey, setSearchKey] = useState("");
     const [quickcartState, setQuickcartState] = useState(false);
@@ -51,9 +60,7 @@ const Navbar = (props) => {
                         <div className={searchFormState ? "search-container active" : "search-container"}>
                             <div className="d-flex my-2 my-lg-0">
                                 <div className="search-category mr-2 d-none d-md-inline-block">
-                                    <Megamenu
-                                        megamenuContent = {megamenu}
-                                    />
+                                    <Megamenu/>
                                 </div>
                                 <div className="search-form">
                                     <SearchForm
@@ -69,7 +76,7 @@ const Navbar = (props) => {
                         </div>
                         <div className="navbar-right float-right">
                             <ul className=" nav justify-content-end">
-                                { link.map((res, i) => {
+                                { navbarLink.map((res, i) => {
                                     if (res._type === "link") {
                                         if (res._label === "Wishlist") {
                                             return (
@@ -168,25 +175,22 @@ const Navbar = (props) => {
     );
 };
 
-Navbar.defaultProps = {
+Render.defaultProps = {
     logo: {
         _src: "",
         _alt: "",
         _label: ""
     },
     toggleIcon: null,
-    user_login: false,
-    megamenu: null,
-    link: []
+    navbarLink: []
 };
 
-Navbar.propTypes = {
+Render.propTypes = {
     logo: PropTypes.object.isRequired,
     toggleIcon: PropTypes.object,
-    user_login: PropTypes.bool.isRequired,
-    megamenu: PropTypes.array,
-    link: PropTypes.array.isRequired
+    navbarLink: PropTypes.array.isRequired
 };
 
+const Navbar = connect(mapStateToProps)(Render);
 
 export default Navbar;

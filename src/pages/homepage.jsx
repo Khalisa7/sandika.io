@@ -2,19 +2,20 @@ import React, { Fragment } from "react";
 import OwlSlider from "@src/component/owl-carousel";
 import Media from "@src/component/media";
 import ProductItem from "@src/component/product-item";
-import interfaces from "@src/interfaces";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const mapStateToProps = state => {
-    return { cateoryIcon: state.cateoryIcon };
+    return {
+        bannerCarousel: state.bannerCarousel,
+        cateoryIcon: state.cateoryIcon
+    };
 };
 
 const Render = (props) => {
-    const { cateoryIcon } = props;
-    const { bannerCarousel } = interfaces;
+    const { bannerCarousel, cateoryIcon } = props;
     const bannerOptions = {
         loop: true,
         margin: 10,
@@ -190,10 +191,12 @@ const Render = (props) => {
 const Homepage = connect(mapStateToProps)(Render);
 
 Render.propTypes = {
+    bannerCarousel: PropTypes.array,
     cateoryIcon: PropTypes.array
 };
 
 Render.defaultProps = {
+    bannerCarousel: [],
     cateoryIcon: []
 };
 
