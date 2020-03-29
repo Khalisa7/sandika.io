@@ -1,26 +1,43 @@
+/// Base path for assets (fonts, images...),
+/// should not include trailing slash
+$asset-base-path: '..' !default;
+
+@function asset($type, $file) {
+  @return url($asset-base-path + '/' + $type + '/' + $file);
+}
+
+@function image($file) {
+  @return asset('images', $file);
+}
+
+@function font($file) {
+  @return asset('fonts', $file);
+}
+
+
 @font-face {
     font-family: 'OS Regular';
-    src:    url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+    src: font('Open_Sans/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OS Light';
-    src:    url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype');
+    src: font('Open_Sans/OpenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OS Bold';
-    src:    url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype');
+    src: font('Open_Sans/OpenSans-Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OS SemiBold';
-    src:    url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+    src: font('Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OS ExtraBold';
-    src:    url('../fonts/Open_Sans/OpenSans-ExtraBold.ttf') format('truetype');
+    src: font('Open_Sans/OpenSans-ExtraBold.ttf') format('truetype');
 }
 
 
