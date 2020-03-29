@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && cp _redirects dist",
     "debug-code": "eslint --fix \"src/**/*.jsx\""
   },
   "eslintConfig": {
