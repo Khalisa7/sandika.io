@@ -189,13 +189,11 @@
                 width: 100%;
                 background: white;
                 top: -100%;
-                bottom: 100%;
                 transition: 1s ease;
                 height: 100%;
                 overflow: hidden;
                 &.active{
                     top: 0;
-                    bottom: 0;
                 }
                 .clearfix{
                     padding: 10px 15px ;
