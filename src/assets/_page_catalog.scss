@@ -1,11 +1,28 @@
 @media (min-width: 980px){
     .page-catalog{
+        .catalog-banner{
+            min-height: 350px;
+            background: linear-gradient(0deg, rgba(56,196,75,1) 0%, rgb(103, 206, 123) 51%, rgb(122, 235, 143) 100%);
+            display: flex;
+            .catalog-caption{
+                max-width: 1140px;
+                margin: auto;
+                h2, h3{
+                    color: white;
+                    text-align: center;
+                }
+                h2{
+                    font-family: 'OS Bold';
+                }
+            }
+        }
         .catalog-wrapper{
             display:flex;
             max-width: 1140px;
             margin: auto;
             padding-left: 15px;
             padding-right: 15px;    
+            padding-top: 40px;
             .catalog-section{
                 padding-top: 20px;
                 padding-bottom: 20px;

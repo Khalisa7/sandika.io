@@ -1,0 +1,16 @@
+@media (min-width: 980px){
+    .product-grid-container{
+        display: flex;
+        flex-direction: column;
+        .product-grid{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .product-item-wrapper{
+                flex: 0 0 calc(100% / 4);
+                padding-top: 0;
+                padding-bottom: 15px;
+            }
+        }
+    }
+}

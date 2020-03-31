@@ -178,50 +178,50 @@ const initialState = {
             _label: "Kategori",
             _form: [
                 {
-                    _name: "cb_checkbox",
-                    _type: "checkbox",
+                    _name: "cat",
+                    _type: "radio",
                     _label: "Handphone and Gadget",
                     _value: "handphone",
                     _badge: 14
                 },
                 {
-                    _name: "cb_checkbox",
-                    _type: "checkbox",
+                    _name: "cat",
+                    _type: "radio",
                     _label: "Suits",
                     _value: "suits",
                     _badge: 509
                 },
                 {
-                    _name: "cb_checkbox",
-                    _type: "checkbox",
+                    _name: "cat",
+                    _type: "radio",
                     _label: "Car",
                     _value: "car",
                     _badge: 1133
                 },
                 {
-                    _name: "cb_checkbox",
-                    _type: "checkbox",
+                    _name: "cat",
+                    _type: "radio",
                     _label: "Bike",
                     _value: "bike",
                     _badge: 114
                 },
                 {
-                    _name: "cb_checkbox",
-                    _type: "checkbox",
+                    _name: "cat",
+                    _type: "radio",
                     _label: "Laptop",
                     _value: "laptop",
                     _badge: 1444
                 },
                 {
-                    _name: "cb_checkbox",
-                    _type: "checkbox",
+                    _name: "cat",
+                    _type: "radio",
                     _label: "Home Living",
                     _value: "home living",
                     _badge: 1409
                 },
                 {
-                    _name: "cb_checkbox",
-                    _type: "checkbox",
+                    _name: "cat",
+                    _type: "radio",
                     _label: "Goodie Bag",
                     _value: "goodie bag",
                     _badge: 14
@@ -234,40 +234,59 @@ const initialState = {
             _label: "Kisaran Harga",
             _form: [
                 {
-                    _name: "rb_price",
+                    _name: "price",
                     _type: "radio",
                     _label: "Rp 0,00 - Rp 500.000,00",
                     _value: "1"
                 },
                 {
-                    _name: "rb_price",
+                    _name: "price",
                     _type: "radio",
                     _label: "Rp 500.000,00 - Rp 1.000.000,00",
                     _value: "2"
                 },
                 {
-                    _name: "rb_price",
+                    _name: "price",
                     _type: "radio",
                     _label: "Rp 1.000.000,00 - Rp 1.500.000,00",
                     _value: "3"
                 },
                 {
-                    _name: "rb_price",
+                    _name: "price",
                     _type: "radio",
                     _label: "Rp 1.500.000,00 - Rp 5.000.000,00",
                     _value: "4"
                 },
                 {
-                    _name: "rb_price",
+                    _name: "price",
                     _type: "radio",
                     _label: "Rp 5.000.000,00 - Rp 10.000.000,00",
                     _value: "5"
                 },
                 {
-                    _name: "rb_price",
+                    _name: "price",
                     _type: "radio",
                     _label: "> Rp 10.000.000,00",
                     _value: "5"
+                }
+            ]
+        },
+        {
+            _type: "sort",
+            _title: "Sortir",
+            _label: "Sortir Harga",
+            _form: [
+                {
+                    _name: "sort",
+                    _type: "radio",
+                    _label: "Termurah",
+                    _value: "termurah"
+                },
+                {
+                    _name: "sort",
+                    _type: "radio",
+                    _label: "Termahal",
+                    _value: "termahal"
                 }
             ]
         }
