@@ -192,6 +192,7 @@
                 transition: 1s ease;
                 height: 100%;
                 overflow: hidden;
+                -webkit-transform: translateZ(0);
                 &.active{
                     top: 0;
                     bottom: 0;
