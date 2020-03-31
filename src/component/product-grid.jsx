@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 };
 
 const Render = (props) => {
-    const { cateoryIcon } = props;
+    const { filterClick, cateoryIcon } = props;
     return (
         <Fragment>
             <div className="product-grid-container">
@@ -43,8 +43,32 @@ const Render = (props) => {
                             <ProductItem key={i} icon={res._icon_img} label={res._label} />
                         );
                     }) }
+                    { cateoryIcon.map((res, i) => {
+                        return (
+                            <ProductItem key={i} icon={res._icon_img} label={res._label} />
+                        );
+                    }) }
                 </div>
-                <div className="toolbar toolbar-pagination">pagination</div>
+                <div className="toolbar toolbar-pagination">
+                    <ul className="nav justify-content-center">
+                        <li className="nav-item">
+                            <a className="nav-link active" href="#">1</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">2</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">3</a>
+                        </li>
+                    </ul>
+                </div>
+                <div className="toolbar toolbar-filter">
+                    <div className="fixed-bottom">
+                        <button type="button"
+                            className="btn"
+                            onClick={filterClick}>Filter</button>
+                    </div>
+                </div>
             </div>
         </Fragment>
     );
@@ -53,10 +77,12 @@ const Render = (props) => {
 const ProductGrid = connect(mapStateToProps)(Render);
 
 Render.defaulProps = {
+    filterClick: null,
     cateoryIcon: []
 };
 
 Render.propTypes = {
+    filterClick: PropTypes.func,
     cateoryIcon: PropTypes.array
 };
 

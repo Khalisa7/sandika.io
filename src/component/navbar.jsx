@@ -7,6 +7,7 @@ import SearchResult from "@src/component/search-result";
 import QuickCart from "@src/component/quickcart";
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import MenuIcon from '@material-ui/icons/Menu';
 import SvgIcon from "@material-ui/core/SvgIcon";
 import { connect } from "react-redux";
 
@@ -19,7 +20,7 @@ const mapStateToProps = state => {
 };
 
 const Render = (props) => {
-    const { toggleIcon, logo, navbarLink } = props;
+    const { logo, navbarLink } = props;
     const [searchFormState, setSearchFormState] = useState(false);
     const [searchKey, setSearchKey] = useState("");
     const [quickcartState, setQuickcartState] = useState(false);
@@ -51,7 +52,13 @@ const Render = (props) => {
                                 aria-controls="navbarSupportedContent"
                                 aria-expanded="false"
                                 aria-label="Toggle navigation">
-                                {toggleIcon}
+                                <MenuIcon>
+                                    <SvgIcon>
+                                        <path d="M20 12l-1.41-1.41L13
+                                            16.17V4h-2v12.17l-5.58-5.59L4
+                                            12l8 8 8-8z" />
+                                    </SvgIcon>
+                                </MenuIcon>
                             </button>
                             <Link to={"/"} className="navbar-brand d-none d-md-inline-block">
                                 {logo._label}

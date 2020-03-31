@@ -1,7 +1,7 @@
 @media (min-width: 980px){
     .page-catalog{
         .catalog-banner{
-            min-height: 350px;
+            min-height: 300px;
             background: linear-gradient(0deg, rgba(56,196,75,1) 0%, rgb(103, 206, 123) 51%, rgb(122, 235, 143) 100%);
             display: flex;
             .catalog-caption{
@@ -23,6 +23,7 @@
             padding-left: 15px;
             padding-right: 15px;    
             padding-top: 40px;
+            padding-bottom: 40px;
             .catalog-section{
                 padding-top: 20px;
                 padding-bottom: 20px;
@@ -69,6 +70,198 @@
                 flex: 0 0 75%;
                 // background: red;
                 padding-left: 5px;
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) and (max-width: 980px){
+    .page-catalog{
+        .catalog-banner{
+            min-height: 300px;
+            background: linear-gradient(0deg, rgba(56,196,75,1) 0%, rgb(103, 206, 123) 51%, rgb(122, 235, 143) 100%);
+            display: flex;
+            .catalog-caption{
+                max-width: 1140px;
+                margin: auto;
+                h2, h3{
+                    color: white;
+                    text-align: center;
+                }
+                h2{
+                    font-family: 'OS Bold';
+                }
+            }
+        }
+        .catalog-wrapper{
+            display:flex;
+            max-width: 1140px;
+            margin: auto;
+            padding-left: 15px;
+            padding-right: 15px;    
+            padding-top: 40px;
+            padding-bottom: 40px;
+            .catalog-section{
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .catalog-search{
+                flex: 0 0 35%;
+                padding-right: 5px;
+                .card{
+                    overflow: hidden;
+                    border-color: white;
+                    &:first-child{
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                    }
+                    &:last-child{
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        button.btn{
+                            color: white;
+                        }
+                    }
+                    .card-header{
+                        background-color: white;
+                        border-color: $color-border;
+                        h6{
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .list-group .list-group-item{
+                    border-width: 0;
+                    padding: 0;
+                    span, label{
+                        margin-left: 10px;
+                    }
+                    .badge{
+                        background-color: $color-logo;
+                        color: white;
+                        font-size: 10px;
+                    }
+                }
+            }
+            .catalog-product{
+                flex: 0 0 65%;
+                // background: red;
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .page-catalog{
+        .catalog-banner{
+            min-height: 200px;
+            background: linear-gradient(0deg, rgba(56,196,75,1) 0%, rgb(103, 206, 123) 51%, rgb(122, 235, 143) 100%);
+            display: flex;
+            .catalog-caption{
+                max-width: 1140px;
+                margin: auto;
+                h2, h3{
+                    color: white;
+                    text-align: center;
+                }
+                h2{
+                    font-family: 'OS Bold';
+                    font-size: 20px;
+                }
+                h3{
+                    font-size: 16px;
+                }
+            }
+        }
+        .catalog-wrapper{
+            display:flex;
+            flex-direction: column;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            .catalog-section{
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .catalog-search{
+                position: fixed;
+                z-index: 1031;
+                width: 100%;
+                background: white;
+                top: -100%;
+                transition: 1s ease;
+                height: 100%;
+                overflow: hidden;
+                &.active{
+                    top: 0;
+                }
+                .clearfix{
+                    padding: 10px 15px ;
+                }
+                .card{
+                    overflow: hidden;
+                    border-color: white;
+                    &:first-child{
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                    }
+                    &:last-child{
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        button.btn{
+                            color: white;
+                            font-family: "OS Bold";
+                            font-size: 14px;
+                        }
+                    }
+                    .card-header{
+                        background-color: white;
+                        border-color: $color-border;
+                        h6{
+                            cursor: pointer;
+                        }
+                    }
+                    .card-body{
+                        padding:10px;
+                    }
+                }
+
+                .list-group {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    .list-group-item{
+                        border-width: 0;
+                        padding: 0;
+                        span, label{
+                            margin-left: 10px;
+                        }
+                        .badge{
+                            background-color: $color-logo;
+                            color: white;
+                            font-size: 10px;
+                        }
+                        input[type="radio"], input[type="checkbox"]{
+                            display: none;
+                        }
+                        label{
+                            border: 2px solid $color-border;
+                            padding: 10px 15px;
+                            border-radius: 15px;
+                            margin-left: 0;
+                            margin-right: 10px;
+                        }
+                        input[type="checkbox"]:checked + label, 
+                        input[type="radio"]:checked + label{
+                            border-color: $color-logo;
+                        }
+                    }
+                }
+            }
+            .catalog-product{
+                padding:0  5px;
             }
         }
     }

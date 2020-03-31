@@ -32,7 +32,9 @@ const Render = (props) => {
 
     return (
         <Fragment>
-            <h5 className="page-title mb-3">Filter Pencarian</h5>
+            <div className="clearfix">
+                <h5 className="page-title mb-3">Filter Pencarian</h5>
+            </div>
             <form onSubmit={(event) => {return handleSubmit(event);}} >
                 { layeredSearchForm.map((res, i) => {
                     return (
@@ -57,6 +59,7 @@ const Render = (props) => {
                                                         id={res._name + i}
                                                         value={res._value}
                                                         onChange={handleInputChange}
+                                                        className="form-control"
                                                     />
                                                     <label htmlFor={res._name + i}>{res._label}</label>
                                                 </li>
@@ -70,7 +73,7 @@ const Render = (props) => {
                 }) }
                 <div className="card">
                     <div className="card-body">
-                        <button type="submit" className="btn btn-block btn-warning">Cari</button>
+                        <button type="submit" className="btn btn-block btn-warning py-3">Cari</button>
                     </div>
                 </div>
             </form>

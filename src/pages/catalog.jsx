@@ -4,12 +4,14 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import LayeredSearch from "@src/component/layered-search";
 import ProductGrid from "@src/component/product-grid";
+import { useState } from "react";
 
 const mapStateToProps = state => {
     return { cateoryIcon: state.cateoryIcon };
 };
 
 const Render = (props) => {
+    const [filterFormState, setFilterFormState] = useState(false);
     const urlParams = new URLSearchParams(useLocation().search);
     const query = urlParams.get("search");
     return (
@@ -22,11 +24,17 @@ const Render = (props) => {
                     </div>
                 </div>
                 <div className="catalog-wrapper">
-                    <div className="catalog-section catalog-search">
-                        <LayeredSearch/>
+                    <div
+                        className={filterFormState ?
+                            "catalog-section catalog-search active" : "catalog-section catalog-search"}>
+                        <LayeredSearch
+                            active={filterFormState}
+                            filterClick={() => {return setFilterFormState(!filterFormState);}}/>
                     </div>
                     <div className="catalog-section catalog-product">
-                        <ProductGrid query={query}/>
+                        <ProductGrid
+                            query={query}
+                            filterClick={() => {return setFilterFormState(!filterFormState);}}/>
                     </div>
                 </div>
             </div>
