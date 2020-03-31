@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -14,6 +14,13 @@ const Render = (props) => {
     const [filterFormState, setFilterFormState] = useState(false);
     const urlParams = new URLSearchParams(useLocation().search);
     const query = urlParams.get("search");
+
+    useEffect(() => {
+        return filterFormState ?
+            document.body.classList.add("no-scroll") :
+            document.body.classList.remove("no-scroll");
+    });
+
     return (
         <Fragment>
             <div className="page page-catalog">
