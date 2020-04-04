@@ -1,4 +1,4 @@
-import React, { Fragment, Suspense } from "react";
+import React, { Fragment, Suspense, useEffect } from "react";
 import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 import LoadingSpinner from "@src/component/loading-spinner";
 import routes from "@src/routes";
@@ -8,10 +8,13 @@ import Footer from "@src/component/footer";
 
 const App = (props) => {
     const { pathname } = useLocation();
+    useEffect(() => {
+        console.log(pathname);
+    });
     return (
         <Fragment>
             <Suspense fallback={<LoadingSpinner/>} fallbackMinDurationMs={1500} >
-                <Navbar/>
+                { pathname === "/filter" ? null : <Navbar/> }
 
                 <Content>
                     <Switch>
@@ -29,7 +32,7 @@ const App = (props) => {
 
                 </Content>
                 {/* <Brands/> */}
-                <Footer/>
+                { pathname === "/filter" ? null : <Footer/> }
             </Suspense>
         </Fragment>
     );

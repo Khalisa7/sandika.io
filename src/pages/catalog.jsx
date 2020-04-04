@@ -1,25 +1,17 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import LayeredSearch from "@src/component/layered-search";
 import ProductGrid from "@src/component/product-grid";
-import { useState } from "react";
 
 const mapStateToProps = state => {
     return { cateoryIcon: state.cateoryIcon };
 };
 
 const Render = (props) => {
-    const [filterFormState, setFilterFormState] = useState(false);
     const urlParams = new URLSearchParams(useLocation().search);
     const query = urlParams.get("search");
-
-    useEffect(() => {
-        return filterFormState ?
-            document.body.classList.add("no-scroll") :
-            document.body.classList.remove("no-scroll");
-    });
 
     return (
         <Fragment>
@@ -32,16 +24,11 @@ const Render = (props) => {
                 </div>
                 <div className="catalog-wrapper">
                     <div
-                        className={filterFormState ?
-                            "catalog-section catalog-search active" : "catalog-section catalog-search"}>
-                        <LayeredSearch
-                            active={filterFormState}
-                            filterClick={() => {return setFilterFormState(!filterFormState);}}/>
+                        className="catalog-section catalog-search">
+                        <LayeredSearch/>
                     </div>
                     <div className="catalog-section catalog-product">
-                        <ProductGrid
-                            query={query}
-                            filterClick={() => {return setFilterFormState(!filterFormState);}}/>
+                        <ProductGrid query={query}/>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import ProductItem from "@src/component/product-item";
 import { connect } from "react-redux";
@@ -10,7 +11,7 @@ const mapStateToProps = state => {
 };
 
 const Render = (props) => {
-    const { filterClick, cateoryIcon } = props;
+    const { cateoryIcon } = props;
     return (
         <Fragment>
             <div className="product-grid-container">
@@ -64,9 +65,10 @@ const Render = (props) => {
                 </div>
                 <div className="toolbar toolbar-filter">
                     <div className="fixed-bottom">
-                        <button type="button"
-                            className="btn"
-                            onClick={filterClick}>Filter</button>
+                        <Link to="/filter">
+                            <button type="button"
+                                className="btn">Filter</button>
+                        </Link>
                     </div>
                 </div>
             </div>
