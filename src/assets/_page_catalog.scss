@@ -36,6 +36,15 @@
                         padding: 4px 0 ;
                     }
                 }
+                .layered-search-footer{
+                    position: unset;
+                    .card{
+                        border-width: 0;
+                    }
+                    button{
+                        color: white;
+                    }
+                }
             }
             .catalog-product{
                 flex: 0 0 75%;
@@ -79,6 +88,15 @@
             .catalog-search{
                 flex: 0 0 35%;
                 padding-right: 5px;
+                .layered-search-footer{
+                    position: unset;
+                    .card{
+                        border-width: 0;
+                    }
+                    button{
+                        color: white;
+                    }
+                }
             }
             .catalog-product{
                 flex: 0 0 65%;
