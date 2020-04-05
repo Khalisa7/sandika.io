@@ -61,7 +61,7 @@ p, a, small, button, .btn, span, label{
 
 a{
     color: $color-text;
-    text-decoration: none;
+    text-decoration: none !important;
     &:hover{
         color: $color-text;
         transition: 1s ease;
@@ -121,7 +121,7 @@ a{
 }
 #main{
     display: block;   
-    max-width: 512px;
+    max-width: 480px;
     margin:auto;
     background: white;
 }

@@ -1,7 +1,10 @@
 import React, { Fragment, useState } from "react";
+import { useHistory } from "react-router-dom";
 import Input from "@src/component/input";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 const mapStateToProps = state => {
     return {
@@ -12,6 +15,7 @@ const mapStateToProps = state => {
 
 const Render = (props) => {
     // var data = [];
+    const history = useHistory();
     const { layeredSearchForm } = props;
     const [dataForm, updateDataForm] = useState({});
 
@@ -36,6 +40,13 @@ const Render = (props) => {
                 <form onSubmit={(event) => {return handleSubmit(event);}} >
                     <div className="layered-search-header">
                         <div className="clearfix">
+                            <div className="float-left mr-3">
+                                <ArrowBackIcon onClick={() => { history.goBack(); }}>
+                                    <SvgIcon>
+                                        <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                    </SvgIcon>
+                                </ArrowBackIcon>
+                            </div>
                             <h5 className="page-title">Filter Pencarian</h5>
                         </div>
                     </div>

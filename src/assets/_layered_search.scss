@@ -19,6 +19,12 @@
     .layered-search-header{
         .clearfix{
             padding: 10px 20px ;
+            .float-left{
+                color: $color-logo;
+            }
+            h5{
+                margin-top: 3px;
+            }
         }
     }
     .layered-search-body{
@@ -59,9 +65,11 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        max-width: 512px;
+        max-width: 480px;
         button{
             color: white;
+            font-family: "OS Bold";
+            font-size: 14px;
         }
     }
 }

@@ -1,4 +1,5 @@
 import React, { Fragment, useRef } from 'react';
+import { useHistory } from "react-router-dom";
 import PropTypes from 'prop-types';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import SearchIcon from '@material-ui/icons/Search';
@@ -10,6 +11,7 @@ const SearchForm = (props) => {
 
     // const { onClick, onClickOutside, onChange } = props;
     // const [searchKey, setSearchKey] = useState('');
+    const history = useHistory();
     const wrapperRef = useRef(null);
 
     // const handleClickOutside = (event) => {
@@ -42,7 +44,7 @@ const SearchForm = (props) => {
             <form autoComplete={"off"}>
                 <div className="form-row">
                     <div className="col-1 back-icon">
-                        <ArrowBackIcon>
+                        <ArrowBackIcon onClick={() => { history.goBack(); }}>
                             <SvgIcon>
                                 <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
                             </SvgIcon>
