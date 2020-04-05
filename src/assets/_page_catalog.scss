@@ -1,149 +1,39 @@
-@media (min-width: 980px){
-    .page-catalog{
-        .catalog-banner{
-            min-height: 300px;
-            background: linear-gradient(0deg, rgba(56,196,75,1) 0%, rgb(103, 206, 123) 51%, rgb(122, 235, 143) 100%);
-            display: flex;
-            .catalog-caption{
-                max-width: 1140px;
-                margin: auto;
-                h2, h3{
-                    color: white;
-                    text-align: center;
-                }
-                h2{
-                    font-family: 'OS Bold';
-                }
-            }
-        }
-        .catalog-wrapper{
-            display:flex;
+
+.page-catalog{
+    .catalog-banner{
+        min-height: 200px;
+        background: linear-gradient(0deg, rgba(56,196,75,1) 0%, rgb(103, 206, 123) 51%, rgb(122, 235, 143) 100%);
+        display: flex;
+        .catalog-caption{
             max-width: 1140px;
             margin: auto;
-            padding-left: 15px;
-            padding-right: 15px;    
-            padding-top: 40px;
-            padding-bottom: 40px;
-            .catalog-section{
-                padding-top: 20px;
-                padding-bottom: 20px;
+            h2, h3{
+                color: white;
+                text-align: center;
             }
-            .catalog-search{
-                flex: 0 0 25%;
-                padding-right: 5px;
-                .layered-search-header{
-                    .clearfix{
-                        padding: 4px 0 ;
-                    }
-                }
-                .layered-search-footer{
-                    position: unset;
-                    .card{
-                        border-width: 0;
-                    }
-                    button{
-                        color: white;
-                    }
-                }
+            h2{
+                font-family: 'OS Bold';
+                font-size: 20px;
             }
-            .catalog-product{
-                flex: 0 0 75%;
-                // background: red;
-                padding-left: 5px;
+            h3{
+                font-size: 16px;
             }
         }
     }
-}
-
-@media (min-width: 480px) and (max-width: 980px){
-    .page-catalog{
-        .catalog-banner{
-            min-height: 300px;
-            background: linear-gradient(0deg, rgba(56,196,75,1) 0%, rgb(103, 206, 123) 51%, rgb(122, 235, 143) 100%);
-            display: flex;
-            .catalog-caption{
-                max-width: 1140px;
-                margin: auto;
-                h2, h3{
-                    color: white;
-                    text-align: center;
-                }
-                h2{
-                    font-family: 'OS Bold';
-                }
-            }
+    .catalog-wrapper{
+        display:flex;
+        flex-direction: column;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        .catalog-section{
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
-        .catalog-wrapper{
-            display:flex;
-            max-width: 1140px;
-            margin: auto;
-            padding-left: 15px;
-            padding-right: 15px;    
-            padding-top: 40px;
-            padding-bottom: 40px;
-            .catalog-section{
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
-            .catalog-search{
-                flex: 0 0 35%;
-                padding-right: 5px;
-                .layered-search-footer{
-                    position: unset;
-                    .card{
-                        border-width: 0;
-                    }
-                    button{
-                        color: white;
-                    }
-                }
-            }
-            .catalog-product{
-                flex: 0 0 65%;
-                // background: red;
-                padding-left: 5px;
-            }
+        .catalog-search{
+            display: none;
         }
-    }
-}
-
-@media (max-width: 480px){
-    .page-catalog{
-        .catalog-banner{
-            min-height: 200px;
-            background: linear-gradient(0deg, rgba(56,196,75,1) 0%, rgb(103, 206, 123) 51%, rgb(122, 235, 143) 100%);
-            display: flex;
-            .catalog-caption{
-                max-width: 1140px;
-                margin: auto;
-                h2, h3{
-                    color: white;
-                    text-align: center;
-                }
-                h2{
-                    font-family: 'OS Bold';
-                    font-size: 20px;
-                }
-                h3{
-                    font-size: 16px;
-                }
-            }
-        }
-        .catalog-wrapper{
-            display:flex;
-            flex-direction: column;
-            padding-top: 40px;
-            padding-bottom: 40px;
-            .catalog-section{
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
-            .catalog-search{
-                display: none;
-            }
-            .catalog-product{
-                padding:0  5px;
-            }
+        .catalog-product{
+            padding:0  5px;
         }
     }
 }

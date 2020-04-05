@@ -85,18 +85,6 @@ const initialState = {
     navbarLink: [
         {
             _type: 'link',
-            _label: 'Login',
-            _routes: '/login',
-            _style: 'd-none d-md-block nav-link customer-login'
-        },
-        {
-            _type: 'link',
-            _label: 'Register',
-            _routes: '/register',
-            _style: 'd-none d-md-block nav-link customer-register'
-        },
-        {
-            _type: 'link',
             _label: 'Wishlist',
             _routes: '/wishlist',
             _style: 'nav-link wishlist'

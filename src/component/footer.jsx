@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-3 mb-3">
+                        <div className="col-12 mb-3">
                             <p className="footer-title">Sandika</p>
                             <ul className="footer-links">
                                 <li><a href="https://www.yogyaonline.co.id/profil-kami">Profil</a></li>
@@ -18,13 +18,13 @@ const Footer = () => {
                                 <li><a href="https://bit.ly/yolnewsupdate" target="_blank" rel="noopener">News</a></li>
                             </ul>
                         </div>
-                        <div className="col-md-2 mb-3">
+                        <div className="col-12 mb-3">
                             <p className="footer-title">Kebijakan</p>
                             <ul className="footer-links">
                                 <li><a href="https://www.yogyaonline.co.id/profil-kami">Membership</a></li>
                             </ul>
                         </div>
-                        <div className="col-md-2 mb-3">
+                        <div className="col-12 mb-3">
                             <p className="footer-title">Bantuan</p>
                             <ul className="footer-links">
                                 <li><a href="https://www.yogyaonline.co.id/cara-belanja">Cara Belanja</a></li>
@@ -34,7 +34,7 @@ const Footer = () => {
                                 <li><a href="https://www.yogyaonline.co.id/pengembalian">Pengembalian</a></li>
                             </ul>
                         </div>
-                        <div className="col-md-5 mb-3">
+                        <div className="col-12 mb-3">
                             <p className="footer-title">Newsletter</p>
                             <form className="form subscribe mb-3">
                                 <div className="form-row justify-content-center">

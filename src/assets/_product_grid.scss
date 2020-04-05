@@ -1,113 +1,49 @@
-@media (min-width: 980px){
-    .product-grid-container{
+
+.product-grid-container{
+    display: flex;
+    flex-direction: column;
+    .product-grid{
         display: flex;
-        flex-direction: column;
-        .product-grid{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            .product-item-wrapper{
-                flex: 0 0 calc(100% / 4);
-                padding-top: 0;
-                padding-bottom: 15px;
-            }
-        }
-        .toolbar.toolbar-pagination{
-            padding: 40px 0;
-            .nav{
-                .nav-item .nav-link{
-                    color: black;
-                    padding: 0.6rem 1rem;
-                    font-family: "OS Bold";
-                    &.active{
-                        background: $color-warning;
-                        border-radius: 50%;
-                    }
-                }
-            }
-        }
-        .toolbar.toolbar-filter{
-            display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .product-item-wrapper{
+            flex: 0 0 calc(100% / 2);
+            padding-top: 0;
+            padding-bottom: 15px;
         }
     }
-}
-@media (min-width : 480px) and (max-width:960px){
-    .product-grid-container{
-        display: flex;
-        flex-direction: column;
-        .product-grid{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            .product-item-wrapper{
-                flex: 0 0 calc(100% / 2);
-                padding-top: 0;
-                padding-bottom: 15px;
-            }
-        }
-        .toolbar.toolbar-pagination{
-            padding: 40px 0;
-            .nav{
-                .nav-item .nav-link{
-                    color: black;
-                    padding: 0.6rem 1rem;
-                    font-family: "OS Bold";
-                    &.active{
-                        background: $color-warning;
-                        border-radius: 50%;
-                    }
+    .toolbar.toolbar-pagination{
+        padding: 40px 0;
+        .nav{
+            .nav-item .nav-link{
+                color: black;
+                padding: 0.6rem 1rem;
+                font-family: "OS Bold";
+                &.active{
+                    background: $color-warning;
+                    border-radius: 50%;
                 }
             }
-        }
-        .toolbar.toolbar-filter{
-            display: none;
         }
     }
-}
-@media (max-width:480px){
-    .product-grid-container{
-        display: flex;
-        flex-direction: column;
-        .product-grid{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            .product-item-wrapper{
-                flex: 0 0 calc(100% / 2);
-                padding-top: 0;
-                padding-bottom: 15px;
-            }
-        }
-        .toolbar.toolbar-pagination{
-            padding: 40px 0;
-            .nav{
-                .nav-item .nav-link{
-                    color: black;
-                    padding: 0.6rem 1rem;
-                    font-family: "OS Bold";
-                    &.active{
-                        background: $color-warning;
-                        border-radius: 50%;
-                    }
-                }
-            }
-        }
-        .toolbar.toolbar-filter{
-            paddiing:5px;
-            .fixed-bottom{
-                padding: 10px;
-                background: white;
-                .btn{
-                    background: $color-logo;
-                    color: white;
-                    font-family: "OS Bold";
-                    display: block;
-                    margin: auto;
-                    width: 100%;
-                    height: 50px;
-                    font-size: 14px;
-                } 
-            }
+    .toolbar.toolbar-filter{
+        padding:5px;
+        .fixed-bottom{
+            padding: 10px;
+            background: white;
+            width: 100%;
+            max-width: 512px;
+            margin:auto;
+            .btn{
+                background: $color-logo;
+                color: white;
+                font-family: "OS Bold";
+                display: block;
+                margin: auto;
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+            } 
         }
     }
 }

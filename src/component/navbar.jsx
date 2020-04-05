@@ -1,11 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Megamenu from "@src/component/megamenu";
 import SearchForm from "@src/component/search-form";
 import SearchResult from "@src/component/search-result";
 import QuickCart from "@src/component/quickcart";
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import MenuIcon from '@material-ui/icons/Menu';
 import SvgIcon from "@material-ui/core/SvgIcon";
@@ -20,7 +18,7 @@ const mapStateToProps = state => {
 };
 
 const Render = (props) => {
-    const { logo, navbarLink } = props;
+    const { navbarLink } = props;
     const [searchFormState, setSearchFormState] = useState(false);
     const [searchKey, setSearchKey] = useState("");
     const [quickcartState, setQuickcartState] = useState(false);
@@ -60,15 +58,9 @@ const Render = (props) => {
                                     </SvgIcon>
                                 </MenuIcon>
                             </button>
-                            <Link to={"/"} className="navbar-brand d-none d-md-inline-block">
-                                {logo._label}
-                            </Link>
                         </div>
                         <div className={searchFormState ? "search-container active" : "search-container"}>
                             <div className="d-flex my-2 my-lg-0">
-                                <div className="search-category mr-2 d-none d-md-inline-block">
-                                    <Megamenu/>
-                                </div>
                                 <div className="search-form">
                                     <SearchForm
                                         onClick={handleSearchFormFocus}
@@ -100,76 +92,25 @@ const Render = (props) => {
                                                     </Link>
                                                 </li>
                                             );
-                                        } else if (res._label === "Cart") {
-                                            return (
-                                                <li className="nav-item" key={i} >
-                                                    <Link to={res._routes}
-                                                        className={res._style}
-                                                        onClick={(e) => {
-                                                            e.preventDefault();
-                                                            setQuickcartState(!quickcartState);
-                                                        }}>
-                                                        <ShoppingBasketIcon>
-                                                            <SvgIcon>
-                                                                <path d="M20 12l-1.41-1.41L13
-                                                                    16.17V4h-2v12.17l-5.58-5.59L4
-                                                                    12l8 8 8-8z" />
-                                                            </SvgIcon>
-                                                        </ShoppingBasketIcon>
-                                                        <span>{res._label}</span>
-                                                    </Link>
-                                                </li>
-                                            );
-                                        } else {
+                                        } else if (res._type === "link") {
                                             return (
                                                 <li className="nav-item" key={i} >
                                                     <Link to={res._routes} className={res._style}>
+                                                        {res._label === "Wishlist" ?
+                                                            <FavoriteIcon
+                                                                onClick={() => {setQuickcartState(!quickcartState);}}>
+                                                                <SvgIcon>
+                                                                    <path d="M20 12l-1.41-1.41L13
+                                                                        16.17V4h-2v12.17l-5.58-5.59L4
+                                                                        12l8 8 8-8z"/>
+                                                                </SvgIcon>
+                                                            </FavoriteIcon> :
+                                                            null }
                                                         <span>{res._label}</span>
                                                     </Link>
                                                 </li>
                                             );
                                         }
-                                    } else if (res._type === "link") {
-                                        return (
-                                            <li className="nav-item" key={i} >
-                                                <Link to={res._routes} className={res._style}>
-                                                    {res._label === "Wishlist" ?
-                                                        <FavoriteIcon
-                                                            onClick={() => {setQuickcartState(!quickcartState);}}>
-                                                            <SvgIcon>
-                                                                <path d="M20 12l-1.41-1.41L13
-                                                                    16.17V4h-2v12.17l-5.58-5.59L4
-                                                                    12l8 8 8-8z"/>
-                                                            </SvgIcon>
-                                                        </FavoriteIcon> :
-                                                        null }
-                                                    <span>{res._label}</span>
-                                                </Link>
-                                            </li>
-                                        );
-                                    } else {
-                                        return (
-                                            <li className="nav-item dropdown" key={i}>
-                                                <a className="nav-link dropdown-toggle"
-                                                    href="#" id={"navbar-dropdown-" + i}
-                                                    role="button"
-                                                    data-toggle="dropdown"
-                                                    aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    {res._label}
-                                                </a>
-                                                <div className="dropdown-menu dropdown-menu-right"
-                                                    aria-labelledby={"navbar-dropdown-" + i}>
-                                                    { res._item.map((res, i) => {
-                                                        return (
-                                                            <Link to={res._routes}
-                                                                className="dropdown-item"
-                                                                key={i}>{res._label}</Link>
-                                                        );
-                                                    }) }
-                                                </div>
-                                            </li>
-                                        );
                                     }
                                 }) }
                             </ul>
@@ -183,17 +124,17 @@ const Render = (props) => {
 };
 
 Render.defaultProps = {
-    logo: {
-        _src: "",
-        _alt: "",
-        _label: ""
-    },
+    // logo: {
+    //     _src: "",
+    //     _alt: "",
+    //     _label: ""
+    // },
     toggleIcon: null,
     navbarLink: []
 };
 
 Render.propTypes = {
-    logo: PropTypes.object.isRequired,
+    // logo: PropTypes.object.isRequired,
     toggleIcon: PropTypes.object,
     navbarLink: PropTypes.array.isRequired
 };

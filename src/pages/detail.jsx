@@ -1,29 +1,28 @@
 import React, { Fragment } from "react";
-import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import ProductGrid from "@src/component/product-grid";
 
 const mapStateToProps = state => {
     return { cateoryIcon: state.cateoryIcon };
 };
 
 const Render = (props) => {
-    const urlParams = new URLSearchParams(useLocation().search);
-    const query = urlParams.get("search");
-
     return (
         <Fragment>
-            <div className="page page-catalog">
-                <div className="catalog-banner">
-                    <div className="catalog-caption">
+            <div className="page page-detail-product">
+                <div className="detail-product-title">
+                    <div className="detail-product-caption">
                         <h3>Cari Barang Yang Kamu Inginkan</h3>
                         <h2>Sandika.IO</h2>
                     </div>
                 </div>
-                <div className="catalog-wrapper">
-                    <div className="catalog-section catalog-product">
-                        <ProductGrid query={query}/>
+                <div className="detail-product-wrapper">
+                    <div
+                        className="detail-product-section catalog-search">
+                        sd
+                    </div>
+                    <div className="detail-product-section catalog-product">
+                        sd
                     </div>
                 </div>
             </div>
@@ -32,7 +31,7 @@ const Render = (props) => {
 };
 
 
-const Catalog = connect(mapStateToProps)(Render);
+const DetailProduct = connect(mapStateToProps)(Render);
 
 Render.propTypes = {
     cateoryIcon: PropTypes.array
@@ -42,4 +41,4 @@ Render.defaultProps = {
     cateoryIcon: []
 };
 
-export default Catalog;
+export default DetailProduct;

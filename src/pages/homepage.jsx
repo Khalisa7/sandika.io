@@ -20,66 +20,23 @@ const Render = (props) => {
         loop: true,
         margin: 10,
         nav: false,
-        items: 2,
-        responsive: {
-            0: {
-                items: 1,
-                margin: 0
-            },
-            480: {
-                items: 2,
-                margin: 20,
-                stagePadding: 80
-            }
-        }
+        items: 1
     };
     const categoryOptions = {
         nav: false,
         dots: false,
-        responsive: {
-            0: {
-                items: 2,
-                margin: 0,
-                stagePadding: 10,
-                center: true,
-                loop: true
-            },
-            480: {
-                loop: false,
-                items: 4,
-                margin: 0,
-                autoWidth: true
-            }
-        }
+        items: 2,
+        stagePadding: 10,
+        center: true,
+        loop: true
     };
     const productOptions = {
         nav: false,
         dots: false,
-        responsive: {
-            0: {
-                items: 2,
-                margin: 0,
-                stagePadding: 10,
-                loop: true
-            },
-            480: {
-                loop: false,
-                items: 4,
-                margin: 0
-            },
-            980: {
-                loop: false,
-                items: 5,
-                margin: 0,
-                nav: true
-            },
-            1366: {
-                loop: false,
-                items: 6,
-                margin: 0,
-                nav: true
-            }
-        }
+        items: 2,
+        margin: 0,
+        stagePadding: 10,
+        loop: true
     };
 
     return (
