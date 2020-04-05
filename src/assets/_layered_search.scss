@@ -1,5 +1,8 @@
 @media (min-width: 480px){
     .layered-search{
+        max-width: 980px;
+        display: block;
+        margin: auto;
         .layered-search-header{
             .clearfix{
                 padding: 10px 20px ;
@@ -56,6 +59,9 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            max-width: 980px;
+            // left: 0;
+            // right: 0;
             .card{
                 border-width: 0;
             }
