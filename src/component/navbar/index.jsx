@@ -1,11 +1,10 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import SearchForm from "@src/component/search-form";
-import SearchResult from "@src/component/search-result";
 import QuickCart from "@src/component/quickcart";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
 import SvgIcon from "@material-ui/core/SvgIcon";
 import { connect } from "react-redux";
 
@@ -19,24 +18,7 @@ const mapStateToProps = state => {
 
 const Render = (props) => {
     const { navbarLink } = props;
-    const [searchFormState, setSearchFormState] = useState(false);
-    const [searchKey, setSearchKey] = useState("");
     const [quickcartState, setQuickcartState] = useState(false);
-
-    useEffect(() => {
-        return searchFormState ?
-            document.body.classList.add("search-open") :
-            document.body.classList.remove("search-open");
-    });
-
-    const handleSearchFormFocus = ($value) => {
-        setSearchFormState($value);
-    };
-
-    const handleSearchKey = ($value) => {
-        setSearchKey($value);
-    };
-
     return (
         <Fragment>
             <header className="fixed-top">
@@ -59,17 +41,32 @@ const Render = (props) => {
                                 </MenuIcon>
                             </button>
                         </div>
-                        <div className={searchFormState ? "search-container active" : "search-container"}>
+                        <div className="search-container">
                             <div className="d-flex my-2 my-lg-0">
                                 <div className="search-form">
-                                    <SearchForm
-                                        onClick={handleSearchFormFocus}
-                                        onClickOutside={handleSearchFormFocus}
-                                        onChange={handleSearchKey}
-                                    />
-                                    <SearchResult
-                                        searchKey={searchKey}
-                                    />
+                                    <form autoComplete={"off"}>
+                                        <Link to="/search">
+                                            <span>
+                                                <div className="input-group">
+                                                    <input className="form-control"
+                                                        ype="search"
+                                                        placeholder="Temukan barang yang kamu butuhkan disini"
+                                                        name="searchInput"
+                                                    />
+                                                    <div className="input-group-append">
+                                                        <span className="input-group-text" id="basic-addon1">
+                                                            <SearchIcon fontSize={'small'}>
+                                                                <SvgIcon>
+                                                                    <path d="M20 12l-1.41-1.41L13
+                                                                        16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                                </SvgIcon>
+                                                            </SearchIcon>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </Link>
+                                    </form>
                                 </div>
                             </div>
                         </div>

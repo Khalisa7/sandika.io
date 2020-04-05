@@ -3,6 +3,7 @@ const Homepage = lazy(() => import("@src/pages/homepage"));
 const Catalog = lazy(() => import("@src/pages/catalog"));
 const DetailProduct = lazy(() => import("@src/pages/detail"));
 const Dashboard = lazy(() => import("@src/pages/dashboard"));
+const Filter = lazy(() => import("@src/pages/filter"));
 const Search = lazy(() => import("@src/pages/search"));
 
 const routes = [
@@ -15,8 +16,12 @@ const routes = [
         component: () => {return (<Dashboard/>);}
     },
     {
-        path: "/filter",
+        path: "/search",
         component: () => {return (<Search/>);}
+    },
+    {
+        path: "/filter",
+        component: () => {return (<Filter/>);}
     },
     {
         path: "/catalog/:slug",

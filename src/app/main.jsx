@@ -14,7 +14,7 @@ const App = (props) => {
     return (
         <Fragment>
             <Suspense fallback={<LoadingSpinner/>} fallbackMinDurationMs={1500} >
-                { pathname === "/filter" ? null : <Navbar/> }
+                { pathname === "/filter" || pathname === "/search" ? null : <Navbar/> }
 
                 <Content>
                     <Switch>
@@ -32,7 +32,7 @@ const App = (props) => {
 
                 </Content>
                 {/* <Brands/> */}
-                { pathname === "/filter" ? null : <Footer/> }
+                { pathname === "/filter" || pathname === "/search" ? null : <Footer/> }
             </Suspense>
         </Fragment>
     );

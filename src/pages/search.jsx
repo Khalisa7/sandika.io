@@ -1,12 +1,16 @@
 import React, { Fragment } from "react";
-import LayeredSearch from "@src/component/layered-search";
+import SearchForm from "@src/component/search-form";
+import SearchResult from "@src/component/search-result";
 
-const Search = (props) => {
+const Filter = (props) => {
     return (
         <Fragment>
-            <LayeredSearch/>
+            <div className="page page-search">
+                <SearchForm/>
+                <SearchResult/>
+            </div>
         </Fragment>
     );
 };
 
-export default Search;
+export default Filter;
