@@ -1,0 +1,88 @@
+.page-detail-product{
+    background: white;
+    .product-image{
+        border-bottom: 3px solid $color-border;
+        .owl-theme.owl-carousel{
+            .owl-dots{
+                position: absolute;
+                margin-top: -35px;
+                width: 100%;
+            }
+        }
+        .owl-theme .owl-dots .owl-dot {
+            &.active{
+                span{
+                    width: 45px;
+                    background: $color-logo;
+                }
+            }
+            span{
+                margin: 5px 3px;
+                height: 7px;
+                width: 7px;
+            }
+        }
+    }
+    .product-info{
+        padding: 40px 15px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        .product-wishlist{
+            position: absolute;
+            top: -25px;
+            right: 25px;
+            z-index: 1;
+            .btn{
+                background: #f3f3f3;
+                color: #a5a3a3;
+                border-radius: 25px;
+                height: 45px;
+                width: 45px;
+                padding: 0;
+            }
+        }
+        .product-sku{
+            letter-spacing: 3px;
+            h6{
+                color: $color-logo;
+            }
+        }
+        .product-name{
+            text-align: left;
+            font-family: "OS Bold";
+            color: $color-text;
+        }
+        .product-brand{
+            letter-spacing: 3px;
+        }
+        .product-rating{
+            .product-rating-star{
+                color: gold;
+                float: left;
+                margin-right: 15px;
+            }
+            .product-rating-reviews{
+                color: $color-text;
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+        }
+        .price-wrapper{
+            .label{
+                display: inline-block;
+                padding-right: 15px;
+            }
+            .special-price p{
+                color: #dc732d;
+                font-family: 'OS Bold';
+                font-size: 24px;
+            }
+            .old-price p{
+                font-family: 'OS SemiBold';
+                text-decoration: line-through;
+                font-size: 18px;
+            }
+        }
+    }
+}

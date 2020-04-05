@@ -3,7 +3,8 @@
     padding:5px;
     .card{
         border-radius: 5px;
-        border-width: 0;
+        border-width: 1px;
+        border-color: transparent;
         min-height: 320px;
         overflow: hidden;
         position: relative;
