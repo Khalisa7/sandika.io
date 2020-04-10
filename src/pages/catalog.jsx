@@ -19,6 +19,13 @@ const Render = (props) => {
         setFilterState(value);
     };
 
+    useState(() => {
+        console.log(filterState);
+        return filterState ?
+            document.body.classList.add('no-scroll') :
+            document.body.classList.remove('no-scroll');
+    }, [filterState]);
+
     return (
         <Fragment>
             <div className="page page-catalog">
@@ -32,7 +39,7 @@ const Render = (props) => {
                     <div
                         className={filterState ?
                             "catalog-section catalog-search active" : "catalog-section catalog-search"}>
-                        <LayeredSearch active={filterState} />
+                        <LayeredSearch active={filterState} handleFilter={handleFilterClick} />
                     </div>
                     <div className="catalog-section catalog-product">
                         <ProductGrid query={query} handleFilter={handleFilterClick} />

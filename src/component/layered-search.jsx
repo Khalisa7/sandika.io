@@ -2,6 +2,8 @@ import React, { Fragment, useState } from "react";
 import Input from "@src/component/input";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import ArrowBack from '@material-ui/icons/ArrowBack';
+import SvgIcon from "@material-ui/core/SvgIcon";
 
 const mapStateToProps = state => {
     return {
@@ -12,12 +14,11 @@ const mapStateToProps = state => {
 
 const Render = (props) => {
     // var data = [];
-    const { layeredSearchForm } = props;
+    const { layeredSearchForm, handleFilter } = props;
     const [dataForm, updateDataForm] = useState({});
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(dataForm);
     };
 
     const handleInputChange = (event) => {
@@ -27,7 +28,6 @@ const Render = (props) => {
             ...dataForm,
             [$key]: $value
         });
-        console.log(dataForm);
     };
 
     return (
@@ -36,6 +36,15 @@ const Render = (props) => {
                 <form onSubmit={(event) => {return handleSubmit(event);}} >
                     <div className="layered-search-header">
                         <div className="clearfix">
+                            <div className="arrow-back">
+                                <ArrowBack onClick={() => {handleFilter(false);}}>
+                                    <SvgIcon>
+                                        <path d="M20 12l-1.41-1.41L13
+                                            16.17V4h-2v12.17l-5.58-5.59L4
+                                            12l8 8 8-8z" />
+                                    </SvgIcon>
+                                </ArrowBack>
+                            </div>
                             <h5 className="page-title">Filter Pencarian</h5>
                         </div>
                     </div>
@@ -91,12 +100,14 @@ const Render = (props) => {
 
 Render.defaultProps = {
     active: false,
-    layeredSearchForm: []
+    layeredSearchForm: [],
+    handleFilter: null
 };
 
 Render.propTypes = {
     active: PropTypes.bool,
-    layeredSearchForm: PropTypes.array
+    layeredSearchForm: PropTypes.array,
+    handleFilter: PropTypes.func
 };
 
 const LayeredSearch = connect(mapStateToProps)(Render);

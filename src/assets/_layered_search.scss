@@ -73,9 +73,18 @@
 }
 @media (max-width: 480px){
     .layered-search{
+        width: 100%;
         .layered-search-header{
+            border-bottom: 1px solid $color-border;
             .clearfix{
                 padding: 10px 20px ;
+                .arrow-back{
+                    float: left;
+                    margin-right: 15px;
+                }
+                h5{
+                    margin-top: 2px;
+                }
             }
         }
         .layered-search-body{

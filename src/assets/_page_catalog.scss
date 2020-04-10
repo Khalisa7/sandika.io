@@ -147,6 +147,8 @@
                 transition: .5s ease;
                 &.active{
                     top: 0;
+                    right: 0;
+                    left: 0;
                     .layered-search-footer{
                         position: fixed;
                         bottom: 0;

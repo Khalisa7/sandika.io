@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, Suspense, lazy } from "react";
+import React, { Fragment, Suspense, lazy } from "react";
 import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 import LoadingSpinner from "@src/component/loading-spinner";
 import Navbar from "@src/component/navbar";
@@ -12,14 +12,9 @@ const Catalog = lazy(() => { return import ("@src/pages/catalog"); });
 
 const App = (props) => {
     const { pathname } = useLocation();
-    useEffect(() => {
-        console.log(pathname);
-    });
     return (
         <Fragment>
-            {/* <Suspense fallback={<LoadingSpinner/>} fallbackMinDurationMs={1500} > */}
-            { pathname === "/filter" ? null : <Navbar/> }
-
+            <Navbar/>
             <Content>
                 <Switch>
                     <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
@@ -42,7 +37,7 @@ const App = (props) => {
 
             </Content>
             <Brands/>
-            { pathname === "/filter" ? null : <Footer/> }
+            <Footer/>
         </Fragment>
     );
 };
