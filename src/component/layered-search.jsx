@@ -90,10 +90,12 @@ const Render = (props) => {
 };
 
 Render.defaultProps = {
+    active: false,
     layeredSearchForm: []
 };
 
 Render.propTypes = {
+    active: PropTypes.bool,
     layeredSearchForm: PropTypes.array
 };
 

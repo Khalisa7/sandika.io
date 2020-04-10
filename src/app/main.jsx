@@ -1,10 +1,14 @@
-import React, { Fragment, Suspense, useEffect } from "react";
+import React, { Fragment, useEffect, Suspense, lazy } from "react";
 import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 import LoadingSpinner from "@src/component/loading-spinner";
-import routes from "@src/routes";
 import Navbar from "@src/component/navbar";
 import Content from "@src/component/content";
+import Brands from "@src/component/brands";
 import Footer from "@src/component/footer";
+
+// Pages
+const Homepage = lazy(() => { return import ("@src/pages/homepage"); });
+const Catalog = lazy(() => { return import ("@src/pages/catalog"); });
 
 const App = (props) => {
     const { pathname } = useLocation();
@@ -13,27 +17,32 @@ const App = (props) => {
     });
     return (
         <Fragment>
-            <Suspense fallback={<LoadingSpinner/>} fallbackMinDurationMs={1500} >
-                { pathname === "/filter" ? null : <Navbar/> }
+            {/* <Suspense fallback={<LoadingSpinner/>} fallbackMinDurationMs={1500} > */}
+            { pathname === "/filter" ? null : <Navbar/> }
 
-                <Content>
-                    <Switch>
-                        <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
-                        {
-                            routes.map((route, i) => {
-                                if (route.path === "/" || route.path === "/dashboard") {
-                                    return (<Route key={i} exact path={route.path} children={route.component}/>);
-                                } else {
-                                    return (<Route key={i} path={route.path} children={route.component}/>);
-                                }
-                            })
-                        }
-                    </Switch>
+            <Content>
+                <Switch>
+                    <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
+                    <Route exact path={"/"}>
+                        <Suspense fallback={<LoadingSpinner/>}>
+                            <Homepage/>
+                        </Suspense>
+                    </Route>
+                    <Route path={"/catalog/:slug"}>
+                        <Suspense fallback={<LoadingSpinner/>}>
+                            <Catalog/>
+                        </Suspense>
+                    </Route>
+                    <Route path={"/:product_slug"}>
+                        <Suspense fallback={<LoadingSpinner/>}>
+                            <Catalog/>
+                        </Suspense>
+                    </Route>
+                </Switch>
 
-                </Content>
-                {/* <Brands/> */}
-                { pathname === "/filter" ? null : <Footer/> }
-            </Suspense>
+            </Content>
+            <Brands/>
+            { pathname === "/filter" ? null : <Footer/> }
         </Fragment>
     );
 };

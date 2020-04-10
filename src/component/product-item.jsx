@@ -4,9 +4,10 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStore } from "@fortawesome/free-solid-svg-icons";
+import AddToCartButton from "@src/component/addtocartbutton";
 
 const ProductItem = (props) => {
-    const { label } = props;
+    const { label, enableAddToCart } = props;
     return (
         <Fragment>
             <div className="product-item-wrapper">
@@ -29,9 +30,7 @@ const ProductItem = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="card-footer">
-                        <a href="#" className="btn btn-warning btn-block"><strong>Beli</strong></a>
-                    </div>
+                    {enableAddToCart ? <AddToCartButton/> : null}
                     <div className="card-action-wishlist">
                         <button>
                             <FavoriteIcon fontSize={"small"}>
@@ -49,12 +48,14 @@ const ProductItem = (props) => {
 
 ProductItem.defaultProps = {
     icon: "",
-    label: ""
+    label: "",
+    enableAddToCart: false
 };
 
 ProductItem.propTypes = {
     icon: PropTypes.string,
-    label: PropTypes.string
+    label: PropTypes.string,
+    enableAddToCart: PropTypes.bool
 };
 
 export default ProductItem;

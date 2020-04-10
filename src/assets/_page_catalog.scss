@@ -135,11 +135,23 @@
             padding-top: 40px;
             padding-bottom: 40px;
             .catalog-section{
-                padding-top: 20px;
-                padding-bottom: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
             .catalog-search{
-                display: none;
+                position: fixed;
+                z-index: 1031;
+                min-height: 100%;
+                top: -100%;
+                background: white;
+                transition: .5s ease;
+                &.active{
+                    top: 0;
+                    .layered-search-footer{
+                        position: fixed;
+                        bottom: 0;
+                    }
+                }
             }
             .catalog-product{
                 padding:0  5px;

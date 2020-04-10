@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -10,8 +10,14 @@ const mapStateToProps = state => {
 };
 
 const Render = (props) => {
+    // state
+    const [filterState, setFilterState] = useState(false);
     const urlParams = new URLSearchParams(useLocation().search);
     const query = urlParams.get("search");
+
+    const handleFilterClick = (value) => {
+        setFilterState(value);
+    };
 
     return (
         <Fragment>
@@ -24,11 +30,12 @@ const Render = (props) => {
                 </div>
                 <div className="catalog-wrapper">
                     <div
-                        className="catalog-section catalog-search">
-                        <LayeredSearch/>
+                        className={filterState ?
+                            "catalog-section catalog-search active" : "catalog-section catalog-search"}>
+                        <LayeredSearch active={filterState} />
                     </div>
                     <div className="catalog-section catalog-product">
-                        <ProductGrid query={query}/>
+                        <ProductGrid query={query} handleFilter={handleFilterClick} />
                     </div>
                 </div>
             </div>
