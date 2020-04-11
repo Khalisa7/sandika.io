@@ -9,6 +9,7 @@ import Footer from "@src/component/footer";
 // Pages
 const Homepage = lazy(() => { return import ("@src/pages/homepage"); });
 const Catalog = lazy(() => { return import ("@src/pages/catalog"); });
+const Product = lazy(() => { return import ("@src/pages/product"); });
 
 const App = (props) => {
     const { pathname } = useLocation();
@@ -30,7 +31,7 @@ const App = (props) => {
                     </Route>
                     <Route path={"/:product_slug"}>
                         <Suspense fallback={<LoadingSpinner/>}>
-                            <Catalog/>
+                            <Product/>
                         </Suspense>
                     </Route>
                 </Switch>

@@ -2,15 +2,15 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 const Media = (props) => {
-    const { icon, label } = props;
+    const { imgSrc, altImg, children } = props;
     return (
         <Fragment>
             <div className="media">
                 <div className="media-img">
-                    { icon !== null ? <img src={icon} alt={label} srcSet=""/> : null }
+                    { imgSrc !== null ? <img src={imgSrc} alt={altImg} srcSet=""/> : null }
                 </div>
                 <div className="media-body">
-                    { label }
+                    { children }
                 </div>
             </div>
         </Fragment>
@@ -18,13 +18,18 @@ const Media = (props) => {
 };
 
 Media.propTypes = {
-    icon: PropTypes.string,
-    label: PropTypes.string
+    imgSrc: PropTypes.string,
+    altImg: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
 };
 
 Media.defaultProps = {
-    icon: "",
-    label: ""
+    imgSrc: "",
+    altImg: "",
+    children: null
 };
 
 export default Media;

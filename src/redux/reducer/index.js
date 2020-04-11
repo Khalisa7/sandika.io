@@ -290,6 +290,20 @@ const initialState = {
                 }
             ]
         }
+    ],
+    productImage: [
+        {
+            _desktop: "https://www.thebodyshop.co.id/media/catalog/product/cache/6b8245bae7647528e2edd9cb5e275de1/M/_/M_101210003.JPG",
+            _mobile: "https://www.thebodyshop.co.id/media/catalog/product/cache/6b8245bae7647528e2edd9cb5e275de1/M/_/M_101210003.JPG"
+        },
+        {
+            _desktop: "https://www.thebodyshop.co.id/media/catalog/product/cache/6b8245bae7647528e2edd9cb5e275de1/M/_/M_101210003.JPG",
+            _mobile: "https://www.thebodyshop.co.id/media/catalog/product/cache/6b8245bae7647528e2edd9cb5e275de1/M/_/M_101210003.JPG"
+        },
+        {
+            _desktop: "https://www.thebodyshop.co.id/media/catalog/product/cache/6b8245bae7647528e2edd9cb5e275de1/M/_/M_101210003.JPG",
+            _mobile: "https://www.thebodyshop.co.id/media/catalog/product/cache/6b8245bae7647528e2edd9cb5e275de1/M/_/M_101210003.JPG"
+        }
     ]
 };
 

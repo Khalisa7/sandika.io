@@ -14,17 +14,15 @@ const Render = (props) => {
     const [filterState, setFilterState] = useState(false);
     const urlParams = new URLSearchParams(useLocation().search);
     const query = urlParams.get("search");
+    useState(() => {
+        return filterState ?
+            document.body.classList.add('no-scroll') :
+            document.body.classList.remove('no-scroll');
+    });
 
     const handleFilterClick = (value) => {
         setFilterState(value);
     };
-
-    useState(() => {
-        console.log(filterState);
-        return filterState ?
-            document.body.classList.add('no-scroll') :
-            document.body.classList.remove('no-scroll');
-    }, [filterState]);
 
     return (
         <Fragment>

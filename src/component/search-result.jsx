@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import Media from "@src/component/media";
 
 const PRODUCTS = [
     { category: 'Sporting Goods', price: '$49.99', stocked: () => { return true; }, name: 'Football', img: 'https://via.placeholder.com/60' },
@@ -45,37 +46,22 @@ const SearchResult = (props) => {
                 return -1;
             }
             searchRow.push(
-                <div className="media" key={i}>
-                    <div className="img-thumbs">
-                        <img src={res.img} srcSet=""/>
-                    </div>
-                    <div className="media-body">
-                        <p>{res.name}</p>
-                    </div>
-                </div>
+                <Media imgSrc={res.img} key={i}>
+                    <p>{res.name}</p>
+                </Media>
             );
             tempRow.push(
-                <div className="media" key={i}>
-                    <div className="img-thumbs">
-                        <img src={res.img} srcSet=""/>
-                    </div>
-                    <div className="media-body">
-                        <p>{res.name}</p>
-                    </div>
-                </div>
+                <Media imgSrc={res.img} key={i}>
+                    <p>{res.name}</p>
+                </Media>
             );
         });
     } else if (searchKey === "") {
         products.map((res, i) => {
             searchRow.push(
-                <div className="media" key={i}>
-                    <div className="img-thumbs">
-                        <img src={res.img} srcSet=""/>
-                    </div>
-                    <div className="media-body">
-                        <p>{res.name}</p>
-                    </div>
-                </div>
+                <Media imgSrc={res.img} key={i}>
+                    <p>{res.name}</p>
+                </Media>
             );
         });
     }

@@ -4,6 +4,9 @@
         display: block;
         margin: auto;
         .layered-search-header{
+            .arrow-back{
+                display: none;
+            }
             .clearfix{
                 padding: 10px 20px ;
             }
@@ -137,8 +140,11 @@
         }
         .layered-search-footer{
             width: 100%;
-            .card-body{
-                padding: 10px;
+            .card{
+                border: none;
+                .card-body{
+                    padding: 10px;
+                }
             }
             button{
                 color: white;
