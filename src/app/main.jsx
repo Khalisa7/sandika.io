@@ -37,8 +37,8 @@ const App = (props) => {
                 </Switch>
 
             </Content>
-            <Brands/>
             <Footer/>
+            <Brands/>
         </Fragment>
     );
 };
