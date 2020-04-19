@@ -112,7 +112,7 @@ const Render = (props) => {
                             <OwlSlider options={categoryOptions}>
                                 { cateoryIcon.map((res, i) => {
                                     return (
-                                        <Media key={i} icon={res._icon_img} label={res._label} />
+                                        <Media key={i} imgSrc={res._icon_img} children={res._label} />
                                     );
                                 }) }
                             </OwlSlider>
