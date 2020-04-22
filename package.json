@@ -13,7 +13,8 @@
   },
   "scripts": {
     "sandika:dev": "webpack-dev-server --open --config webpack.dev.js",
-    "sandika:build": "webpack --config webpack.prod.js && cp _redirects dist && node server.js",
+    "sandika:build:csr": "webpack --config webpack.prod.js && cp _redirects dist",
+    "sandika:build:ssr": "webpack --config webpack.prod.js && cp _redirects dist && node server.js",
     "debug-code": "eslint --fix \"src/**/*.jsx\""
   },
   "eslintConfig": {
