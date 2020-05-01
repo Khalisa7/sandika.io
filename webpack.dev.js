@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const dotEnv = require('dotenv-webpack');
 const webpack = require("webpack");
 const cssExtract = require('mini-css-extract-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 
 
@@ -130,5 +131,22 @@ module.exports = {
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css',
         }),
+        new ManifestPlugin({
+            seed: {
+                "short_name": "Sandika",
+                "name": "Sandika",
+                "icons": [
+                    {
+                        "src": "favicon.png",
+                        "sizes": "64x64 32x32 24x24 16x16",
+                        "type": "image/png"
+                    }
+                ],
+                "start_url": "/?source=pwa",
+                "display": "standalone",
+                "theme_color": "#000000",
+                "background_color": "#ffffff"
+            }
+        })
     ]
 }

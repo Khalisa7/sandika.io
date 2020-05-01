@@ -13,14 +13,15 @@
   },
   "scripts": {
     "sandika:dev": "webpack-dev-server --open --config webpack.dev.js",
-    "sandika:build:csr": "webpack --config webpack.prod.js && cp _redirects dist",
-    "sandika:build:ssr": "webpack --config webpack.prod.js && cp _redirects dist && node server.js",
-    "debug-code": "eslint --fix \"src/**/*.jsx\""
+    "sandika:build:csr": "webpack --config webpack.dev.js && cp _redirects dist",
+    "sandika:build:ssr": "webpack --config webpack.prod.js && cp _redirects dist",
+    "debug:code": "eslint --fix \"src/**/*.jsx\""
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "dependencies": {
+    "@babel/register": "^7.9.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
@@ -31,6 +32,7 @@
     "@restart/hooks": "^0.3.22",
     "bootstrap": "^4.4.1",
     "classnames": "^2.2.6",
+    "formik": "^2.1.4",
     "jquery": "^3.4.1",
     "node-sass": "^4.13.1",
     "popper.js": "^1.16.1",
@@ -43,7 +45,10 @@
     "react-router-dom": "^5.1.2",
     "react-spinners": "^0.8.1",
     "react-swipeable": "^5.5.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "webpack-manifest-plugin": "^2.2.0",
+    "yup": "^0.28.4"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
@@ -53,8 +58,8 @@
     "@babel/plugin-transform-react-jsx": "7.8.3",
     "@babel/plugin-transform-react-jsx-self": "7.8.3",
     "@babel/plugin-transform-react-jsx-source": "7.8.3",
-    "@babel/preset-env": "^7.8.6",
-    "@babel/preset-react": "7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-emotion": "^10.0.29",

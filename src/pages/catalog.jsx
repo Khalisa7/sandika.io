@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import LayeredSearch from "@src/component/layered-search";
 import ProductGrid from "@src/component/product-grid";
 
-const mapStateToProps = state => {
-    return { cateoryIcon: state.cateoryIcon };
+const mapStateToProps = ({ frontend }) => {
+    return { cateoryIcon: frontend.cateoryIcon };
 };
 
 const Render = (props) => {

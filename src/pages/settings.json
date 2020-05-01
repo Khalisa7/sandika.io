@@ -1,0 +1,69 @@
+{
+    "configIndexIndex": {
+        "bannerOptions": {
+            "loop": true,
+            "margin": 10,
+            "nav": false,
+            "items": 2,
+            "responsive": {
+                "0": {
+                    "items": 1,
+                    "margin": 0
+                },
+                "480": {
+                    "items": 2,
+                    "margin": 20,
+                    "stagePadding": 80
+                }
+            }
+        },
+        "categoryOptions": {
+            "nav": false,
+            "dots": false,
+            "responsive": {
+                "0": {
+                    "items": 2,
+                    "margin": 0,
+                    "stagePadding": 10,
+                    "center": true,
+                    "loop": true
+                },
+                "480": {
+                    "loop": false,
+                    "items": 4,
+                    "margin": 0,
+                    "autoWidth": true
+                }
+            }
+        },
+        "productOptions": {
+            "nav": false,
+            "dots": false,
+            "responsive": {
+                "0": {
+                    "items": 2,
+                    "margin": 0,
+                    "stagePadding": 10,
+                    "loop": true
+                },
+                "480": {
+                    "loop": false,
+                    "items": 4,
+                    "margin": 0
+                },
+                "980": {
+                    "loop": false,
+                    "items": 5,
+                    "margin": 0,
+                    "nav": true
+                },
+                "1366": {
+                    "loop": false,
+                    "items": 6,
+                    "margin": 0,
+                    "nav": true
+                }
+            }
+        }
+    }
+}

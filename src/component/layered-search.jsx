@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import SvgIcon from "@material-ui/core/SvgIcon";
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ frontend }) => {
     return {
-        layeredSearchForm: state.layeredSearchForm
+        layeredSearchForm: frontend.layeredSearchForm
     };
 };
 

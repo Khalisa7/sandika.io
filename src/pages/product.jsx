@@ -6,9 +6,9 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { connect } from "react-redux";
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ frontend }) => {
     return {
-        productImage: state.productImage
+        productImage: frontend.productImage
     };
 };
 

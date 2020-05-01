@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import ProductItem from "@src/component/product-item";
 import { connect } from "react-redux";
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ frontend }) => {
     return {
-        cateoryIcon: state.cateoryIcon
+        cateoryIcon: frontend.cateoryIcon
     };
 };
 

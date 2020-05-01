@@ -11,11 +11,11 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SvgIcon from "@material-ui/core/SvgIcon";
 import { connect } from "react-redux";
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ frontend }) => {
     return {
-        logo: state.logo,
-        navbarLink: state.navbarLink,
-        megamenuContent: state.megamenuContent
+        logo: frontend.logo,
+        navbarLink: frontend.navbarLink,
+        megamenuContent: frontend.megamenuContent
     };
 };
 
